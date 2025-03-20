@@ -7,12 +7,14 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         project = request.form['project']
+        android_version = request.form['android_version']
         sw_version = request.form['sw_version']
+        project_variant = request.form['project_variant']
         build_type = request.form['build_type']
         
         # Construye la URL de artifacts
-        base_url = "https://artifacts.motorola.com"
-        url = f"{base_url}/{project}/{sw_version}/{build_type}"
+        base_url = "https://artifacts.mot.com/artifactory"
+        url = f"{base_url}/{project}/{android_version}/{sw_version}/{project_variant}/{build_type}"
         
         # Codifica la URL para manejar caracteres especiales
         encoded_url = urllib.parse.quote(url, safe=':/')
