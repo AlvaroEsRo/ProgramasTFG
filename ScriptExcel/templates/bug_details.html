@@ -1,4 +1,3 @@
-_details.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +26,10 @@ _details.html -->
                         {{ bug.bug_status }}
                     </span>
                 </h2>
-                <a href="{{ url_for('analyze_bugs', filename=filename) }}" class="btn btn-outline-primary">Volver a resultados</a>
+                <div>
+                    <a href="{{ url_for('jira_report', bug_number=bug.bug_number) }}" class="btn btn-success me-2">Crear Ticket Jira</a>
+                    <a href="{{ url_for('analyze_bugs', filename=filename) }}" class="btn btn-outline-primary">Volver a resultados</a>
+                </div>
             </div>
             
             <div class="card-body">

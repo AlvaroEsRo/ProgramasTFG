@@ -284,6 +284,45 @@ def view_bug(bug_number, filename):
     }
     
     return render_template('bug_details.html', bug=bug_info, filename=filename)
+# Añadir esta nueva ruta antes del if __name__ == '__main__':
+
+@app.route('/jira_report/<bug_number>')
+def jira_report(bug_number):
+    conn = sqlite3.connect('bugs_database.db')
+    cursor = conn.cursor()
+    
+    # Obtener los detalles del bug
+    cursor.execute("""
+    SELECT bug_number, discovery_date, raised_in, bug_status, fixed_in, 
+           fixed_by, tested_by, technology, priority, name, description, 
+           comments, defect_id
+    FROM bugs WHERE bug_number = ?
+    """, (bug_number,))
+    
+    bug_details = cursor.fetchone()
+    conn.close()
+    
+    if not bug_details:
+        return "Bug no encontrado", 404
+    
+    # Convertir a diccionario para facilitar el acceso en la plantilla
+    bug_info = {
+        'bug_number': bug_details[0],
+        'discovery_date': bug_details[1],
+        'raised_in': bug_details[2],
+        'bug_status': bug_details[3],
+        'fixed_in': bug_details[4],
+        'fixed_by': bug_details[5],
+        'tested_by': bug_details[6],
+        'technology': bug_details[7],
+        'priority': bug_details[8],
+        'name': bug_details[9],
+        'description': bug_details[10],
+        'comments': bug_details[11],
+        'defect_id': bug_details[12]
+    }
+    
+    return render_template('jira_report.html', bug=bug_info)
 
 if __name__ == '__main__':
     init_db()  # Inicializar la base de datos una vez al iniciar la aplicación
