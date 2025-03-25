@@ -136,6 +136,19 @@
                 {% endif %}
             </div>
         </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="mb-0">
+                Bug #{{ bug.bug_number }}
+                <span class="badge status-badge {{ 'bg-success' if bug.bug_status == 'CLOSED' else 'bg-warning text-dark' }}">
+                    {{ bug.bug_status }}
+                </span>
+            </h2>
+            <div>
+                <a href="{{ url_for('saved_crs') }}" class="btn btn-info me-2">Ver CRs guardados</a>
+                <a href="{{ url_for('jira_report', bug_number=bug.bug_number) }}" class="btn btn-success me-2">Crear Ticket Jira</a>
+                <a href="{{ url_for('analyze_bugs', filename=filename) }}" class="btn btn-outline-primary">Volver a resultados</a>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

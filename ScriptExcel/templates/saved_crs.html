@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRs Guardados para Jira</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { background-color: #f4f5f7; }
+        .jira-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .jira-header {
+            background-color: #0747a6;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 3px;
+        }
+        .jira-card {
+            background-color: white;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(9, 30, 66, 0.13);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .severity-blocker { color: #CC0000; }
+        .severity-critical { color: #FF5630; }
+        .severity-major { color: #FF8B00; }
+        .severity-minor { color: #36B37E; }
+        .severity-trivial { color: #00B8D9; }
+    </style>
+</head>
+<body>
+    <div class="jira-container mt-4 mb-5">
+        <div class="jira-header d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png" alt="Jira Logo" class="me-2" style="height: 32px;">
+                <h2 class="mb-0">CRs Guardados para Jira</h2>
+            </div>
+            <a href="/" class="btn btn-light">Inicio</a>
+        </div>
+        
+        <div class="jira-card">
+            {% if crs %}
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Bug #</th>
+                            <th>Resumen</th>
+                            <th>Severidad</th>
+                            <th>Creado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cr in crs %}
+                            <tr>
+                                <td>{{ cr[0] }}</td>
+                                <td>{{ cr[1] }}</td>
+                                <td>{{ cr[2] }}</td>
+                                <td>
+                                    {% if cr[4] == 'Blocker' %}
+                                        <span class="severity-blocker"><i class="fas fa-arrow-up"></i> Blocker</span>
+                                    {% elif cr[4] == 'Critical' %}
+                                        <span class="severity-critical"><i class="fas fa-arrow-up"></i> Critical</span>
+                                    {% elif cr[4] == 'Major' %}
+                                        <span class="severity-major"><i class="fas fa-minus"></i> Major</span>
+                                    {% elif cr[4] == 'Minor' %}
+                                        <span class="severity-minor"><i class="fas fa-arrow-down"></i> Minor</span>
+                                    {% else %}
+                                        <span class="severity-trivial"><i class="fas fa-arrow-down"></i> Trivial</span>
+                                    {% endif %}
+                                </td>
+                                <td>{{ cr[3] }}</td>
+                                <td>
+                                    <a href="{{ url_for('view_cr', cr_id=cr[0]) }}" class="btn btn-sm btn-primary">
+                                        <i class="fas fa-eye"></i> Ver
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <div class="alert alert-info">
+                    No hay CRs guardados. Crea uno desde la página de detalles de un bug.
+                </div>
+            {% endif %}
+        </div>
+        
+        <div class="text-center mt-3">
+            <p class="text-muted small">Nota: Esta es una simulación. En un entorno real, estos datos se enviarían a Jira.</p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

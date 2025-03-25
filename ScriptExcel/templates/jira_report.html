@@ -3,123 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte Jira - Bug #{{ bug.bug_number }}</title>
+    <title>Crear CR en Jira - Bug #{{ bug.bug_number }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body { background-color: #f8f9fa; }
-        .card { margin-bottom: 20px; }
-        pre { 
-            white-space: pre-wrap; 
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
+        body { 
+            background-color: #f4f5f7; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Fira Sans', 'Droid Sans', sans-serif;
         }
-        #copyMessage {
-            display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            padding: 15px;
-            background-color: #28a745;
+        .jira-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .jira-header {
+            background-color: #0747a6;
             color: white;
-            border-radius: 5px;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 3px;
+        }
+        .jira-logo {
+            height: 32px;
+            margin-right: 10px;
+        }
+        .jira-card {
+            background-color: white;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(9, 30, 66, 0.13);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .jira-label {
+            font-weight: 600;
+            color: #172b4d;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .required-field::after {
+            content: " *";
+            color: #de350b;
+        }
+        .jira-select, .jira-input, .jira-textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 2px solid #dfe1e6;
+            border-radius: 3px;
+            background-color: #fafbfc;
+            margin-bottom: 1rem;
+        }
+        .jira-select:focus, .jira-input:focus, .jira-textarea:focus {
+            border-color: #4c9aff;
+            box-shadow: 0 0 0 2px #4c9aff40;
+            outline: none;
+        }
+        .jira-button {
+            background-color: #0052cc;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-right: 0.5rem;
+        }
+        .jira-button:hover {
+            background-color: #0747a6;
+        }
+        .jira-button-secondary {
+            background-color: #f4f5f7;
+            color: #172b4d;
+            border: 1px solid #dfe1e6;
+        }
+        .jira-button-secondary:hover {
+            background-color: #e9e9e9;
+            color: #172b4d;
+        }
+        .jira-footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: #6b778c;
+            font-size: 0.8rem;
+        }
+        .jira-hint {
+            color: #6b778c;
+            font-size: 0.8rem;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+        .jira-section {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #dfe1e6;
+            padding-bottom: 1rem;
+        }
+        .jira-message {
+            background-color: #e3fcef;
+            border: 1px solid #abf5d1;
+            border-radius: 3px;
+            color: #164b35;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="container mt-5 mb-5">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h2>Reporte Jira para Bug #{{ bug.bug_number }}</h2>
-            </div>
-            <div class="card-body">
-                <p class="alert alert-info">
-                    <i class="fas fa-info-circle"></i> A continuación se muestra el formato para crear un ticket en Jira. Puedes copiar este contenido y pegarlo directamente en el sistema de Jira de Motorola.
-                </p>
+    <div class="jira-container mt-4 mb-5">
+        <div class="jira-header d-flex align-items-center">
+            <img src="https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png" alt="Jira Logo" class="jira-logo">
+            <h2 class="mb-0">Crear Issue</h2>
+        </div>
+        
+        <div id="successMessage" class="jira-message">
+            <i class="fas fa-check-circle me-2"></i>
+            Issue creado exitosamente: <strong>{{ bug.bug_number }}-CR</strong>
+        </div>
 
-                <div class="mb-4">
-                    <h4>Vista previa:</h4>
-                    <div class="card">
-                        <div class="card-header bg-light">
-                            <h5>[{{ bug.bug_number }}] {{ bug.name }}</h5>
+        <div class="jira-card">
+            <form id="jiraForm" method="POST">
+                <div class="jira-section">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="project" class="jira-label required-field">Project</label>
+                            <select id="project" name="project" class="jira-select" required>
+                                {% if bug.raised_in and '15' in bug.raised_in %}
+                                    <option value="V">V (Android 15)</option>
+                                {% else %}
+                                    <option value="U">U (Android 14)</option>
+                                {% endif %}
+                            </select>
                         </div>
-                        <div class="card-body">
-                            <p><strong>Tipo de problema:</strong> Bug</p>
-                            <p><strong>Prioridad:</strong> {{ bug.priority or 'Media' }}</p>
-                            <p><strong>Tecnología:</strong> {{ bug.technology or 'No especificada' }}</p>
-                            <p><strong>Descubierto en:</strong> {{ bug.discovery_date or 'No especificada' }}</p>
-                            <p><strong>Versión afectada:</strong> {{ bug.raised_in or 'No especificada' }}</p>
-                            <hr>
-                            <h6>Descripción:</h6>
-                            <p>{{ bug.description or 'Sin descripción' }}</p>
-                            {% if bug.comments %}
-                            <h6>Comentarios adicionales:</h6>
-                            <p>{{ bug.comments }}</p>
-                            {% endif %}
+                        <div class="col-md-6">
+                            <label for="issueType" class="jira-label required-field">Issue type</label>
+                            <select id="issueType" name="issueType" class="jira-select" required>
+                                <option value="defect" selected>Defect</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="summary" class="jira-label required-field">Summary</label>
+                        <input type="text" id="summary" name="summary" class="jira-input" 
+                               value="[Bug #{{ bug.bug_number }}] {{ bug.name }}" required>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="affectsVersion" class="jira-label required-field">Affects Version</label>
+                            <input type="text" id="affectsVersion" name="affectsVersion" class="jira-input" 
+                                   value="{{ bug.raised_in or '' }}" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="teamFound" class="jira-label required-field">Team Found</label>
+                            <select id="teamFound" name="teamFound" class="jira-select" required>
+                                <option value="Orange" selected>Orange</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="regionCode" class="jira-label required-field">Region code</label>
+                            <select id="regionCode" name="regionCode" class="jira-select" required>
+                                <option value="EU" selected>EU (Europa)</option>
+                                <option value="NA">NA (Norteamérica)</option>
+                                <option value="LATAM">LATAM (Latinoamérica)</option>
+                                <option value="APAC">APAC (Asia-Pacífico)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="country" class="jira-label required-field">Country</label>
+                            <select id="country" name="country" class="jira-select" required>
+                                <option value="ES" selected>ES (España)</option>
+                                <option value="FR">FR (Francia)</option>
+                                <option value="UK">UK (Reino Unido)</option>
+                                <option value="IT">IT (Italia)</option>
+                                <option value="DE">DE (Alemania)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="carrier" class="jira-label required-field">Carrier</label>
+                            <select id="carrier" name="carrier" class="jira-select" required>
+                                <option value="Orange Spain" selected>Orange Spain</option>
+                            </select>
                         </div>
                     </div>
                 </div>
-
-                <h4>Formato para copiar:</h4>
-                <div class="mb-3">
-                    <button id="copyBtn" class="btn btn-success mb-2" onclick="copyJiraFormat()">
-                        <i class="fas fa-copy"></i> Copiar al portapapeles
-                    </button>
-                    <pre id="jiraFormat">Resumen: [{{ bug.bug_number }}] {{ bug.name }}
-
-Tipo: Bug
-
-Prioridad: {{ bug.priority or 'Media' }}
-
-Tecnología: {{ bug.technology or 'No especificada' }}
-
-Versión afectada: {{ bug.raised_in or 'No especificada' }}
-
-Descubierto en fecha: {{ bug.discovery_date or 'No especificada' }}
-
-Descripción:
-{{ bug.description or 'Sin descripción disponible' }}
-
-{% if bug.comments %}Comentarios adicionales:
-{{ bug.comments }}{% endif %}
-
-ID Defecto: {{ bug.defect_id or 'No asignado' }}
-
-Estado actual: {{ bug.bug_status }}
-</pre>
+                
+                <div class="jira-section">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="components" class="jira-label required-field">Components</label>
+                            <input type="text" id="components" name="components" class="jira-input"
+                                   placeholder="Dispositivo/proyecto afectado" required>
+                            <div class="jira-hint">Especifique el nombre del dispositivo o proyecto afectado.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="severity" class="jira-label required-field">Severity</label>
+                            <select id="severity" name="severity" class="jira-select" required>
+                                <option value="Blocker" {% if bug.priority == "P1" %}selected{% endif %}>Blocker</option>
+                                <option value="Critical" {% if bug.priority == "P2" %}selected{% endif %}>Critical</option>
+                                <option value="Major" {% if bug.priority == "P3" %}selected{% endif %}>Major</option>
+                                <option value="Minor" {% if bug.priority == "P4" %}selected{% endif %}>Minor</option>
+                                <option value="Trivial" {% if not bug.priority or bug.priority == "P5" %}selected{% endif %}>Trivial</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-
+                
+                <div class="jira-section">
+                    <label for="description" class="jira-label required-field">Description</label>
+                    <textarea id="description" name="description" class="jira-textarea" rows="10" required>{{ bug.description or '' }}</textarea>
+                    <div class="jira-hint">Detalle el problema con la mayor cantidad de información posible.</div>
+                </div>
+                
                 <div class="d-flex justify-content-between mt-4">
-                    <a href="javascript:history.back()" class="btn btn-secondary">Volver atrás</a>
-                    <a href="{{ url_for('upload_file') }}" class="btn btn-primary">Ir a Inicio</a>
+                    <div>
+                        <a href="{{ url_for('view_bug', bug_number=bug.bug_number, filename='placeholder') }}" 
+                           class="jira-button jira-button-secondary">Cancelar</a>
+                    </div>
+                    <div>
+                        <button type="button" id="copyButton" class="jira-button jira-button-secondary me-2">
+                            Copiar contenido
+                        </button>
+                        <!-- En el botón submitButton dentro de jira_report.html -->
+                        <button type="submit" id="submitButton" class="jira-button">Crear y Guardar</button>
+                    </div>
                 </div>
+            </form>
+        </div>
+        
+        <div class="jira-footer">
+            <p>Simulación de Jira para Motorola • TFG {{ '2025' }}</p>
+            <p><small>Nota: Esta es una simulación. En un entorno real, este formulario enviaría los datos a la API de Jira.</small></p>
+        </div>
+    </div>
+    
+    <div id="copyMessage" class="position-fixed top-0 end-0 p-3" style="z-index: 1050; display: none;">
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-success text-white">
+                <strong class="me-auto"><i class="fas fa-check-circle"></i> Éxito</strong>
+                <button type="button" class="btn-close btn-close-white" onclick="document.getElementById('copyMessage').style.display='none'"></button>
+            </div>
+            <div class="toast-body">
+                Contenido copiado al portapapeles.
             </div>
         </div>
     </div>
-
-    <div id="copyMessage">¡Copiado al portapapeles!</div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        function copyJiraFormat() {
-            const textToCopy = document.getElementById('jiraFormat').textContent;
-            navigator.clipboard.writeText(textToCopy)
-                .then(() => {
-                    const message = document.getElementById('copyMessage');
-                    message.style.display = 'block';
-                    setTimeout(() => {
-                        message.style.display = 'none';
-                    }, 2000);
-                })
-                .catch(err => {
-                    console.error('Error al copiar: ', err);
-                    alert('No se pudo copiar al portapapeles. Por favor, selecciona y copia manualmente.');
-                });
-        }
+        document.getElementById('submitButton').addEventListener('click', function() {
+            // En una implementación real, esto enviaría el formulario a la API de Jira
+            // Para la simulación, solo mostraremos el mensaje de éxito
+            document.getElementById('successMessage').style.display = 'block';
+            window.scrollTo(0, 0);
+            
+            // Simular un tiempo de procesamiento
+            setTimeout(function() {
+                // Aquí redirigirías a la lista de issues o a la vista del issue creado
+                window.location.href = '{{ url_for("view_bug", bug_number=bug.bug_number, filename="placeholder") }}';
+            }, 3000);
+        });
+        
+        document.getElementById('copyButton').addEventListener('click', function() {
+            const form = document.getElementById('jiraForm');
+            let textToCopy = '';
+            
+            // Recopilar la información del formulario
+            textToCopy += 'Project: ' + document.getElementById('project').value + '\n';
+            textToCopy += 'Issue type: ' + document.getElementById('issueType').value + '\n';
+            textToCopy += 'Summary: ' + document.getElementById('summary').value + '\n';
+            textToCopy += 'Affects Version: ' + document.getElementById('affectsVersion').value + '\n';
+            textToCopy += 'Team Found: ' + document.getElementById('teamFound').value + '\n';
+            textToCopy += 'Region code: ' + document.getElementById('regionCode').value + '\n';
+            textToCopy += 'Country: ' + document.getElementById('country').value + '\n';
+            textToCopy += 'Carrier: ' + document.getElementById('carrier').value + '\n';
+            textToCopy += 'Components: ' + document.getElementById('components').value + '\n';
+            textToCopy += 'Severity: ' + document.getElementById('severity').value + '\n';
+            textToCopy += 'Description:\n' + document.getElementById('description').value + '\n';
+            
+            // Copiar al portapapeles
+            navigator.clipboard.writeText(textToCopy).then(function() {
+                document.getElementById('copyMessage').style.display = 'block';
+                setTimeout(function() {
+                    document.getElementById('copyMessage').style.display = 'none';
+                }, 3000);
+            }, function(err) {
+                console.error('Error al copiar: ', err);
+            });
+        });
     </script>
 </body>
 </html>

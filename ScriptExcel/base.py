@@ -39,6 +39,33 @@ def init_db():
     conn.close()
     print("Base de datos inicializada correctamente.")
 
+def init_cr_db():
+    conn = sqlite3.connect('bugs_database.db')
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+    CREATE TABLE IF NOT EXISTS change_requests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        bug_number TEXT,
+        project TEXT,
+        issue_type TEXT,
+        summary TEXT,
+        affects_version TEXT,
+        team_found TEXT,
+        region_code TEXT,
+        country TEXT,
+        carrier TEXT,
+        components TEXT,
+        severity TEXT,
+        description TEXT,
+        created_at TEXT,
+        FOREIGN KEY (bug_number) REFERENCES bugs(bug_number)
+    )
+    ''')
+    conn.commit()
+    conn.close()
+    print("Tabla de CRs inicializada correctamente.")
+
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
@@ -286,7 +313,7 @@ def view_bug(bug_number, filename):
     return render_template('bug_details.html', bug=bug_info, filename=filename)
 # Añadir esta nueva ruta antes del if __name__ == '__main__':
 
-@app.route('/jira_report/<bug_number>')
+@app.route('/jira_report/<bug_number>', methods=['GET', 'POST'])
 def jira_report(bug_number):
     conn = sqlite3.connect('bugs_database.db')
     cursor = conn.cursor()
@@ -300,9 +327,9 @@ def jira_report(bug_number):
     """, (bug_number,))
     
     bug_details = cursor.fetchone()
-    conn.close()
     
     if not bug_details:
+        conn.close()
         return "Bug no encontrado", 404
     
     # Convertir a diccionario para facilitar el acceso en la plantilla
@@ -322,8 +349,123 @@ def jira_report(bug_number):
         'defect_id': bug_details[12]
     }
     
+    # Manejar envío del formulario
+    if request.method == 'POST':
+        cr_data = {
+            'bug_number': bug_number,
+            'project': request.form.get('project'),
+            'issue_type': request.form.get('issueType'),
+            'summary': request.form.get('summary'),
+            'affects_version': request.form.get('affectsVersion'),
+            'team_found': request.form.get('teamFound'),
+            'region_code': request.form.get('regionCode'),
+            'country': request.form.get('country'),
+            'carrier': request.form.get('carrier'),
+            'components': request.form.get('components'),
+            'severity': request.form.get('severity'),
+            'description': request.form.get('description'),
+            'created_at': datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        }
+        
+        # Guardar CR en la base de datos
+        cursor.execute('''
+        INSERT INTO change_requests (
+            bug_number, project, issue_type, summary, affects_version,
+            team_found, region_code, country, carrier, components,
+            severity, description, created_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            cr_data['bug_number'],
+            cr_data['project'],
+            cr_data['issue_type'],
+            cr_data['summary'],
+            cr_data['affects_version'],
+            cr_data['team_found'],
+            cr_data['region_code'],
+            cr_data['country'],
+            cr_data['carrier'],
+            cr_data['components'],
+            cr_data['severity'],
+            cr_data['description'],
+            cr_data['created_at']
+        ))
+        conn.commit()
+        
+        # Obtener el ID del CR recién insertado
+        cr_id = cursor.lastrowid
+        conn.close()
+        
+        # Redirigir a la página de visualización del CR
+        return redirect(url_for('view_cr', cr_id=cr_id))
+    
+    conn.close()
     return render_template('jira_report.html', bug=bug_info)
 
+@app.route('/view_cr/<int:cr_id>')
+def view_cr(cr_id):
+    conn = sqlite3.connect('bugs_database.db')
+    cursor = conn.cursor()
+    
+    # Obtener los detalles del CR
+    cursor.execute("""
+    SELECT id, bug_number, project, issue_type, summary, affects_version,
+           team_found, region_code, country, carrier, components,
+           severity, description, created_at
+    FROM change_requests WHERE id = ?
+    """, (cr_id,))
+    
+    cr_details = cursor.fetchone()
+    
+    if not cr_details:
+        conn.close()
+        return "CR no encontrado", 404
+    
+    # Convertir a diccionario
+    cr_info = {
+        'id': cr_details[0],
+        'bug_number': cr_details[1],
+        'project': cr_details[2],
+        'issue_type': cr_details[3],
+        'summary': cr_details[4],
+        'affects_version': cr_details[5],
+        'team_found': cr_details[6],
+        'region_code': cr_details[7],
+        'country': cr_details[8],
+        'carrier': cr_details[9],
+        'components': cr_details[10],
+        'severity': cr_details[11],
+        'description': cr_details[12],
+        'created_at': cr_details[13]
+    }
+    
+    # Obtener información del bug relacionado
+    cursor.execute("SELECT name FROM bugs WHERE bug_number = ?", (cr_info['bug_number'],))
+    bug_name = cursor.fetchone()
+    if bug_name:
+        cr_info['bug_name'] = bug_name[0]
+    
+    conn.close()
+    return render_template('view_cr.html', cr=cr_info)
+
+@app.route('/saved_crs')
+def saved_crs():
+    conn = sqlite3.connect('bugs_database.db')
+    cursor = conn.cursor()
+    
+    # Obtener todos los CRs guardados
+    cursor.execute("""
+    SELECT cr.id, cr.bug_number, cr.summary, cr.created_at, cr.severity, b.name
+    FROM change_requests cr
+    LEFT JOIN bugs b ON cr.bug_number = b.bug_number
+    ORDER BY cr.created_at DESC
+    """)
+    
+    crs = cursor.fetchall()
+    conn.close()
+    
+    return render_template('saved_crs.html', crs=crs)
+
 if __name__ == '__main__':
-    init_db()  # Inicializar la base de datos una vez al iniciar la aplicación
+    init_db()  # Inicializar la tabla de bugs
+    init_cr_db()  # Inicializar la tabla de CRs
     app.run(debug=True)
