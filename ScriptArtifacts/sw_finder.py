@@ -15,7 +15,7 @@ def index():
         "bronco",
     ]
     
-    android_versions = ["14.0", "15.0"]
+    android_versions = ["14", "15"]
     
     if request.method == 'POST':
         project = request.form['project']
@@ -25,7 +25,7 @@ def index():
         
         # Construye la URL de artifacts sin project_variant
         base_url = "https://artifacts.mot.com/artifactory"
-        url = f"{base_url}/{project}/{android_version}/{sw_version}/{build_type}"
+        url = f"{base_url}/{project}/{android_version}/{sw_version}/{project}_g_sys/{build_type}"
         
         # Codifica la URL para manejar caracteres especiales
         encoded_url = urllib.parse.quote(url, safe=':/')
