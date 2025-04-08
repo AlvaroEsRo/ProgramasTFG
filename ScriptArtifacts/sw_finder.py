@@ -8,6 +8,7 @@ import re
 import tarfile
 import threading
 import time
+import sys
 
 app = Flask(__name__)
 
@@ -82,11 +83,13 @@ def install():
         with open(log_file_path, "w") as log_file:
             log_file.write("")
 
-        # Obtener la ruta del archivo seleccionada por el usuario
+        # Obtener la ruta del archivo ingresada por el usuario
         file_path = request.form.get('file_path', '').strip()
-        carrier = request.form.get('carrier', 'default')  # Extraer el valor de 'carrier' aquí
-        if not file_path or not os.path.exists(file_path):
-            return render_template('install.html', logs=["El archivo seleccionado no existe o la ruta es inválida."])
+        carrier = request.form.get('carrier', 'default')  # Obtener el valor del carrier
+
+        # Validar que la ruta del archivo exista
+        if not os.path.exists(file_path):
+            return render_template('install.html', logs=["La ruta del archivo no existe."])
 
         if not file_path.endswith('.tar.gz'):
             return render_template('install.html', logs=["El archivo seleccionado no es un archivo .tar.gz válido."])
@@ -128,12 +131,8 @@ def install():
                 flashall_path = os.path.join(extract_path, "flashall.bat")
                 if os.path.exists(flashall_path):
                     log_message(f"Ejecutando: {flashall_path}")
-                    try:
-                        # Cambiar al directorio donde se encuentra flashall.bat y ejecutarlo
-                        run_command(["cmd", "/c", ".\flashall.bat"], log_file_path)
-                        log_message("Archivo 'flashall.bat' ejecutado con éxito.")
-                    except Exception as e:
-                        log_message(f"Error al ejecutar 'flashall.bat': {e}")
+                    run_command(["cmd", "/c", ".\flashall.bat"], log_file_path)
+                    log_message("Archivo 'flashall.bat' ejecutado con éxito.")
                 else:
                     log_message("El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.")
 
@@ -147,30 +146,24 @@ def install():
 
     return render_template('install.html')
 
-@app.route('/logs', methods=['GET'])
-def get_logs():
-    """Devuelve los logs actuales como texto."""
-    try:
-        with open(log_file_path, "r") as log_file:
-            return log_file.read()
-    except FileNotFoundError:
-        return "No hay logs disponibles aún."
-
-def log_message(message):
-    """Escribe un mensaje en el archivo de logs y lo imprime en la terminal."""
-    with open(log_file_path, "a") as log_file:
-        log_file.write(message + "\n")
-    print(message)
-
 def run_command(command, log_file_path):
-    """Ejecuta un comando y captura su salida en tiempo real."""
+    """Ejecuta un comando y captura su salida en tiempo real, incluyendo porcentajes."""
     try:
         process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
         with open(log_file_path, "a") as log_file:
             for line in process.stdout:
-                log_file.write(line)  # Escribir en el archivo de logs
-                log_file.flush()  # Asegurarse de que se escriba inmediatamente
-                print(line, end="")  # Mostrar en la terminal
+                # Escribir cada línea en el archivo de logs
+                log_file.write(line)
+                log_file.flush()
+
+                # Mostrar la línea en la terminal
+                print(line, end="")
+
+                # Extraer y mostrar el porcentaje de progreso si está presente
+                match = re.search(r'(\d+)%', line)
+                if match:
+                    percentage = match.group(1)
+                    print(f"Progreso de descompresión: {percentage}%")
         process.wait()
         if process.returncode != 0:
             raise subprocess.CalledProcessError(process.returncode, command)
@@ -178,6 +171,12 @@ def run_command(command, log_file_path):
         with open(log_file_path, "a") as log_file:
             log_file.write(f"Error al ejecutar el comando: {e}\n")
         print(f"Error al ejecutar el comando: {e}")
+
+def log_message(message):
+    """Escribe un mensaje en el archivo de logs y lo muestra en la terminal."""
+    with open(log_file_path, "a") as log_file:
+        log_file.write(message + "\n")
+    print(message)
 
 if __name__ == '__main__':
     app.run(debug=True)

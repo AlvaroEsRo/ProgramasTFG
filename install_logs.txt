@@ -3,63 +3,41 @@ Descomprimiendo el archivo en: C:\ROM\Orion - Leap
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-1 file, 14236278229 bytes (14 GiB)
+1 file, 14918835368 bytes (14 GiB)
 
-Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_user_15_V2VL35.42-35-2_43f959-880d8_release-keys-cid50-global_US.tar.gz
+Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar.gz
 --
-Path = C:\ROM\Orion - Leap\fastboot_leap_g_user_15_V2VL35.42-35-2_43f959-880d8_release-keys-cid50-global_US.tar.gz
+Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar.gz
 Type = gzip
 Headers Size = 10
 
 Everything is Ok
 
-Size:       17260625920
-Compressed: 14236278229
+Size:       18164951040
+Compressed: 14918835368
 Primera descompresión completada en: C:\ROM\Orion - Leap
-Encontrado archivo comprimido adicional: C:\ROM\Orion - Leap\fastboot_leap_g_user_15_V2VL35.42-35-2_43f959-880d8_release-keys-cid50-global_US.tar
+Encontrado archivo comprimido adicional: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-1 file, 17260625920 bytes (17 GiB)
+1 file, 18164951040 bytes (17 GiB)
 
-Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_user_15_V2VL35.42-35-2_43f959-880d8_release-keys-cid50-global_US.tar
+Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar
 --
-Path = C:\ROM\Orion - Leap\fastboot_leap_g_user_15_V2VL35.42-35-2_43f959-880d8_release-keys-cid50-global_US.tar
+Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar
 Type = tar
-Physical Size = 17260625920
-Headers Size = 163840
+Physical Size = 18164951040
+Headers Size = 189952
 Code Page = UTF-8
 Characteristics = GNU LongName ASCII
 
 Everything is Ok
 
 Folders: 9
-Files: 196
-Size:       17260417820
-Compressed: 17260625920
+Files: 198
+Size:       18164716818
+Compressed: 18164951040
 Segunda descompresión completada en: C:\ROM\Orion - Leap
 Ejecutando: fastboot -w
-Erasing 'userdata'                                 OKAY [  0.001s]
-Erase successful, but not automatically formatting.
-File system type raw not supported.
-Erasing 'metadata'                                 OKAY [  0.000s]
-Erase successful, but not automatically formatting.
-File system type raw not supported.
-Finished. Total time: 0.011s
-Comando 'fastboot -w' ejecutado con éxito.
-Ejecutando: fastboot oem config carrier reteu
-(bootloader) <UTAG name="carrier" type="str" protected="FALSE">
-(bootloader)   <value>
-(bootloader)     reteu
-(bootloader)   </value>
-(bootloader)   <description>
-(bootloader)     Carrier IDs, see http://goo.gl/lojLh3
-(bootloader)   </description>
-(bootloader) </UTAG>
-
-OKAY [  0.002s]
-Finished. Total time: 0.002s
-Comando 'fastboot oem config carrier reteu' ejecutado con éxito.
-El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.
-Instalación completada con éxito.
+< waiting for any device >
