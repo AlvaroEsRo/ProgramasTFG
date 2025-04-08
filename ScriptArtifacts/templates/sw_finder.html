@@ -39,6 +39,14 @@
             background-color: #003d7f;
             border-color: #003d7f;
         }
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
         .help-text {
             font-size: 0.8rem;
             color: #6c757d;
@@ -49,7 +57,8 @@
 <body>
     <div class="container mt-5 mb-5">
         <div class="text-center">
-            <img src="{{ url_for('static', filename='motorola-logo.png') }}" alt="Motorola Logo" class="logo">            <h1 class="mb-4">Software Repository Finder</h1>
+            <img src="{{ url_for('static', filename='motorola-logo.png') }}" alt="Motorola Logo" class="logo">
+            <h1 class="mb-4">Software Repository Finder</h1>
             <p class="lead">Accede rápidamente al repositorio de artifacts de Motorola</p>
         </div>
 
@@ -103,6 +112,13 @@
                         <button type="submit" class="btn btn-primary btn-lg">Buscar Software</button>
                     </div>
                 </form>
+                <br>
+                <!-- Botón para ir a la vista de instalación -->
+                <div class="d-grid gap-2">
+                    <form action="/install" method="GET">
+                        <button type="submit" class="btn btn-secondary btn-lg">Ir a la instalación del SW</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
