@@ -131,8 +131,12 @@ def install():
                 flashall_path = os.path.join(extract_path, "flashall.bat")
                 if os.path.exists(flashall_path):
                     log_message(f"Ejecutando: {flashall_path}")
-                    run_command(["cmd", "/c", ".\flashall.bat"], log_file_path)
-                    log_message("Archivo 'flashall.bat' ejecutado con éxito.")
+                    try:
+                        # Ejecutar el archivo flashall.bat desde el directorio descomprimido
+                        run_command(["cmd", "/c", ".\\flashall.bat"], log_file_path, cwd=extract_path)
+                        log_message("Archivo 'flashall.bat' ejecutado con éxito.")
+                    except Exception as e:
+                        log_message(f"Error al ejecutar 'flashall.bat': {e}")
                 else:
                     log_message("El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.")
 
@@ -146,10 +150,10 @@ def install():
 
     return render_template('install.html')
 
-def run_command(command, log_file_path):
+def run_command(command, log_file_path, cwd=None):
     """Ejecuta un comando y captura su salida en tiempo real, incluyendo porcentajes."""
     try:
-        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, cwd=cwd)
         with open(log_file_path, "a") as log_file:
             for line in process.stdout:
                 # Escribir cada línea en el archivo de logs

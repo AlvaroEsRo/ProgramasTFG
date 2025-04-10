@@ -1,43 +1,60 @@
-Descomprimiendo el archivo en: C:\ROM\Orion - Leap
+Descomprimiendo el archivo en: C:\ROM\Manila
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-1 file, 14918835368 bytes (14 GiB)
+1 file, 4066887037 bytes (3879 MiB)
 
-Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar.gz
+Extracting archive: C:\ROM\Manila\fastboot_manila_g_user_14_UOA34.216-174-6_c094e4_release-keys.tar.gz
 --
-Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar.gz
+Path = C:\ROM\Manila\fastboot_manila_g_user_14_UOA34.216-174-6_c094e4_release-keys.tar.gz
 Type = gzip
 Headers Size = 10
 
 Everything is Ok
 
-Size:       18164951040
-Compressed: 14918835368
-Primera descompresión completada en: C:\ROM\Orion - Leap
-Encontrado archivo comprimido adicional: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar
+Size:       5322086400
+Compressed: 4066887037
+Primera descompresión completada en: C:\ROM\Manila
+Encontrado archivo comprimido adicional: C:\ROM\Manila\fastboot_manila_g_user_14_UOA34.216-174-6_c094e4_release-keys.tar
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-1 file, 18164951040 bytes (17 GiB)
+1 file, 5322086400 bytes (5076 MiB)
 
-Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar
+Extracting archive: C:\ROM\Manila\fastboot_manila_g_user_14_UOA34.216-174-6_c094e4_release-keys.tar
 --
-Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VL35.42-60-3_b0a4ad-cd7855_intcfg-test-keys_global_US.tar
+Path = C:\ROM\Manila\fastboot_manila_g_user_14_UOA34.216-174-6_c094e4_release-keys.tar
 Type = tar
-Physical Size = 18164951040
-Headers Size = 189952
+Physical Size = 5322086400
+Headers Size = 17920
 Code Page = UTF-8
 Characteristics = GNU LongName ASCII
 
 Everything is Ok
 
-Folders: 9
-Files: 198
-Size:       18164716818
-Compressed: 18164951040
-Segunda descompresión completada en: C:\ROM\Orion - Leap
+Folders: 1
+Files: 23
+Size:       5322063498
+Compressed: 5322086400
+Segunda descompresión completada en: C:\ROM\Manila
 Ejecutando: fastboot -w
-< waiting for any device >
+Erasing 'userdata'                                 OKAY [  0.548s]
+Erase successful, but not automatically formatting.
+File system type LK not supported.
+Erasing 'cache'                                    OKAY [  0.042s]
+Erase successful, but not automatically formatting.
+File system type LK not supported.
+Erasing 'metadata'                                 OKAY [  0.041s]
+Erase successful, but not automatically formatting.
+File system type LK not supported.
+Finished. Total time: 0.994s
+Comando 'fastboot -w' ejecutado con éxito.
+Ejecutando: fastboot oem config carrier reteu
+(bootloader) Write country code OK!
+OKAY [  0.036s]
+Finished. Total time: 0.036s
+Comando 'fastboot oem config carrier reteu' ejecutado con éxito.
+El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.
+Instalación completada con éxito.
