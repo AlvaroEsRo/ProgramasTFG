@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, jsonify
 import urllib.parse
 import requests
 import zipfile
@@ -9,6 +9,7 @@ import tarfile
 import threading
 import time
 import sys
+from tkinter import Tk, filedialog
 
 app = Flask(__name__)
 
@@ -16,15 +17,7 @@ log_file_path = r"C:\ProgramasTFG\install_logs.txt"  # Archivo temporal para alm
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    # Definir las opciones disponibles
-    projects = [
-        "cybert", 
-        "bogota", 
-        "scout", 
-        "paros", 
-        "cancuni", 
-        "bronco",
-    ]
+    projects = ["cybert", "bogota", "scout", "paros", "cancuni", "bronco"]
     android_versions = ["14", "15"]
 
     if request.method == 'POST':
@@ -32,49 +25,83 @@ def index():
         android_version = request.form['android_version']
         sw_version = request.form['sw_version']
         build_type = request.form['build_type']
-        download_path = request.form['download_path']
 
-        # Validar la ruta de descarga
-        if not os.path.exists(download_path):
-            return f"La ruta de descarga no existe: {download_path}", 400
-
-        # Construye la URL de artifacts sin project_variant
+        # Construir la URL de la carpeta según el build_type
         base_url = "https://artifacts.mot.com/artifactory"
-        url = f"{base_url}/{project}/{android_version}/{sw_version}/{project}_g_sys/{build_type}/release-keys_cid50/"
-        
-        # Codifica la URL para manejar caracteres especiales
-        encoded_url = urllib.parse.quote(url, safe=':/')
-        
-        # Realiza una solicitud para obtener el índice de la carpeta
-        response = requests.get(encoded_url, auth=('olallaov', 'Paris2025'))
-        if response.status_code == 200:
-            # Ajusta el patrón para capturar solo el nombre del archivo
-            pattern = re.compile(rf"fastboot_{project}_g_sys_{build_type}_{android_version}_{sw_version}.*release-keys.*\.tar\.gz")
-            match = pattern.search(response.text)
-            
-            if match:
-                # Limpia el nombre del archivo capturado
-                file_name = match.group(0).strip()
-                file_url = f"{encoded_url}{file_name}"
-                
-                # Descargar el archivo
-                response = requests.get(file_url, stream=True)
-                if response.status_code == 200:
-                    file_path = os.path.join(download_path, file_name)
-                    with open(file_path, "wb") as f:
-                        for chunk in response.iter_content(chunk_size=8192):
-                            f.write(chunk)
-                    return f"Archivo descargado en: {file_path}"
-                else:
-                    return "Error al descargar el archivo.", 500
-            else:
-                return "No se encontró un archivo que coincida con el patrón esperado.", 404
-        else:
+        if build_type == "userdebug":
+            url = f"{base_url}/{project}/{android_version}/{sw_version}/{project}_g_sys/{build_type}/intcfg_test-keys/"
+        else:  # Para "user" u otros valores
+            url = f"{base_url}/{project}/{android_version}/{sw_version}/{project}_g_sys/{build_type}/release-keys_cid50/"
+
+        # Realizar una solicitud para obtener el índice de la carpeta
+        response = requests.get(url, auth=('olallaov', 'Paris2025'))
+        if response.status_code != 200:
             return "No se pudo acceder a la URL proporcionada.", 404
-    
-    return render_template('sw_finder.html', 
-                          projects=projects, 
-                          android_versions=android_versions)
+
+        # Buscar el nombre del archivo con el patrón en los href
+        pattern = re.compile(
+            rf'href="(fastboot_{project}_g_sys_{build_type}_{android_version}_{sw_version}.*(release-keys|intcfg-test-keys).*\.tar\.gz)"'
+        )
+        match = pattern.search(response.text)
+        if not match:
+            return "No se encontró un archivo que coincida con el patrón esperado.", 404
+
+        file_name = match.group(1)
+        file_url = urllib.parse.urljoin(url, file_name)
+        print("URL para descargar:", file_url)
+
+        # Redirigir al usuario a la URL del archivo para que el navegador maneje la descarga
+        return redirect(file_url)
+
+    return render_template('sw_finder.html', projects=projects, android_versions=android_versions)
+
+@app.route('/descargar', methods=['POST'])
+def descargar():
+    project = request.form['project']
+    android_version = request.form['android_version']
+    sw_version = request.form['sw_version']
+    build_type = request.form['build_type']
+
+    # Construir la URL de la carpeta
+    base_url = "https://artifacts.mot.com/artifactory"
+    url = f"{base_url}/{project}/{android_version}/{sw_version}/{project}_g_sys/{build_type}/release-keys_cid50/"
+
+    # Realizar una solicitud para obtener el índice de la carpeta
+    response = requests.get(url, auth=('olallaov', 'Paris2025'))
+    if response.status_code != 200:
+        return "No se pudo acceder a la URL proporcionada.", 404
+
+    # Buscar el nombre del archivo con el patrón en los href
+    pattern = re.compile(
+        rf'href="(fastboot_{project}_g_sys_{build_type}_{android_version}_{sw_version}.*release-keys.*\.tar\.gz)"'
+    )
+    match = pattern.search(response.text)
+    if not match:
+        return "No se encontró un archivo que coincida con el patrón esperado.", 404
+
+    file_name = match.group(1)
+    file_url = urllib.parse.urljoin(url, file_name)
+    print("URL para descargar:", file_url)
+
+    # Abrir diálogo para seleccionar carpeta de destino
+    root = Tk()
+    root.withdraw()  # Oculta la ventana principal de Tkinter
+    carpeta = filedialog.askdirectory(title="Selecciona la carpeta de destino para la descarga")
+    root.destroy()
+    if not carpeta:
+        return "No se seleccionó ninguna carpeta.", 400
+
+    file_path = os.path.join(carpeta, file_name)
+
+    # Descargar el archivo
+    descarga = requests.get(file_url, stream=True, auth=('olallaov', 'Paris2025'))
+    if descarga.status_code == 200:
+        with open(file_path, "wb") as f:
+            for chunk in descarga.iter_content(chunk_size=8192):
+                f.write(chunk)
+        return f"Archivo descargado en: {file_path}"
+    else:
+        return f"Error al descargar el archivo. Código de estado: {descarga.status_code}", 500
 
 @app.route('/install', methods=['GET', 'POST'])
 def install():
@@ -149,6 +176,15 @@ def install():
         thread.start()
 
     return render_template('install.html')
+
+@app.route('/choose-folder')
+def choose_folder():
+    # Nota: Esto solo funcionará si el servidor Flask se ejecuta localmente y en una máquina que pueda mostrar diálogos.
+    root = Tk()
+    root.withdraw()  # Oculta la ventana principal de Tkinter
+    carpeta = filedialog.askdirectory()
+    root.destroy()
+    return jsonify(path=carpeta)
 
 def run_command(command, log_file_path, cwd=None):
     """Ejecuta un comando y captura su salida en tiempo real, incluyendo porcentajes."""
