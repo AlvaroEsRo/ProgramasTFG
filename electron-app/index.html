@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Motorola Installer</title>
+</head>
+<body>
+  <h1>Instalación Motorola</h1>
+  <form id="install-form">
+    <label>Ruta TAR.GZ:<br>
+      <input type="text" id="file-path" required placeholder="C:\ruta\archivo.tar.gz">
+    </label><br><br>
+    <label>Carrier:<br>
+      <input type="text" id="carrier" required placeholder="global">
+    </label><br><br>
+    <button type="submit">Iniciar</button>
+  </form>
+  <pre id="log-box" style="height:300px;overflow:auto;background:#000;color:#0f0;padding:10px;"></pre>
+  <script src="renderer.js"></script>
+</body>
+</html>

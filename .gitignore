@@ -1,1 +1,4 @@
 /.venv/
+
+# Ignorar dependencias de Node en la carpeta Electron
+/electron-app/node_modules/
