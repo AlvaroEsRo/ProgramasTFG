@@ -111,9 +111,13 @@ def install():
             log_file.write("")
 
         # Obtener la ruta del archivo ingresada por el usuario
-        file_path = request.form.get('file_path', '').strip()
-        carrier = request.form.get('carrier', 'default')  # Obtener el valor del carrier
+        raw_file_path = request.form.get('file_path', '').strip()
 
+        # Extraer solo el contenido entre comillas si las hay
+        match = re.match(r'^"(.*)"$', raw_file_path)
+        file_path = match.group(1) if match else raw_file_path
+
+        carrier = request.form.get('carrier', 'default').strip()
         # Validar que la ruta del archivo exista
         if not os.path.exists(file_path):
             return render_template('install.html', logs=["La ruta del archivo no existe."])
@@ -122,69 +126,54 @@ def install():
             return render_template('install.html', logs=["El archivo seleccionado no es un archivo .tar.gz válido."])
 
         # Ejecutar el proceso en un hilo separado
-        def run_installation(file_path, carrier):
-            try:
-                # Obtener el directorio del archivo seleccionado
-                extract_path = os.path.dirname(file_path)
-                log_message(f"Descomprimiendo el archivo en: {extract_path}")
-
-                # Descomprimir el archivo utilizando 7-Zip (primera descompresión)
-                seven_zip_path = r"C:\Program Files\7-Zip\7z.exe"  # Ruta al ejecutable de 7-Zip
-                run_command([seven_zip_path, "x", file_path, f"-o{extract_path}"], log_file_path)
-                log_message(f"Primera descompresión completada en: {extract_path}")
-
-                # Buscar el archivo descomprimido (por ejemplo, un .tar o .zip)
-                extracted_files = os.listdir(extract_path)
-                for extracted_file in extracted_files:
-                    extracted_file_path = os.path.join(extract_path, extracted_file)
-                    if extracted_file_path.endswith(('.tar', '.zip')):
-                        log_message(f"Encontrado archivo comprimido adicional: {extracted_file_path}")
-
-                        # Descomprimir el archivo adicional (segunda descompresión)
-                        run_command([seven_zip_path, "x", extracted_file_path, f"-o{extract_path}"], log_file_path)
-                        log_message(f"Segunda descompresión completada en: {extract_path}")
-                        break
-
-                # Ejecutar los comandos fastboot
-                log_message("Ejecutando: fastboot -w")
-                run_command(["fastboot", "-w"], log_file_path)
-                log_message("Comando 'fastboot -w' ejecutado con éxito.")
-
-                log_message(f"Ejecutando: fastboot oem config carrier {carrier}")
-                run_command(["fastboot", "oem", "config", "carrier", carrier], log_file_path)
-                log_message(f"Comando 'fastboot oem config carrier {carrier}' ejecutado con éxito.")
-
-                # Ejecutar el archivo flashall.bat
-                flashall_path = os.path.join(extract_path, "flashall.bat")
-                if os.path.exists(flashall_path):
-                    log_message(f"Ejecutando: {flashall_path}")
-                    try:
-                        # Ejecutar el archivo flashall.bat desde el directorio descomprimido
-                        run_command(["cmd", "/c", ".\\flashall.bat"], log_file_path, cwd=extract_path)
-                        log_message("Archivo 'flashall.bat' ejecutado con éxito.")
-                    except Exception as e:
-                        log_message(f"Error al ejecutar 'flashall.bat': {e}")
-                else:
-                    log_message("El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.")
-
-                log_message("Instalación completada con éxito.")
-            except Exception as e:
-                log_message(f"Error durante la instalación: {e}")
-
-        # Iniciar el hilo para ejecutar el proceso
         thread = threading.Thread(target=run_installation, args=(file_path, carrier))
         thread.start()
 
     return render_template('install.html')
 
-@app.route('/choose-folder')
-def choose_folder():
-    # Nota: Esto solo funcionará si el servidor Flask se ejecuta localmente y en una máquina que pueda mostrar diálogos.
-    root = Tk()
-    root.withdraw()  # Oculta la ventana principal de Tkinter
-    carpeta = filedialog.askdirectory()
-    root.destroy()
-    return jsonify(path=carpeta)
+def run_installation(file_path, carrier):
+    try:
+        # Obtener el directorio del archivo seleccionado
+        extract_path = os.path.dirname(file_path)
+        log_message(f"Descomprimiendo el archivo en: {extract_path}")
+
+        # Descomprimir el archivo utilizando 7-Zip (primera descompresión)
+        seven_zip_path = r"C:\Program Files\7-Zip\7z.exe"  # Ruta al ejecutable de 7-Zip
+        run_command([seven_zip_path, "x", file_path, f"-o{extract_path}"], log_file_path)
+        log_message(f"Primera descompresión completada en: {extract_path}")
+
+        # Buscar el archivo descomprimido (por ejemplo, un .tar o .zip)
+        extracted_files = os.listdir(extract_path)
+        for extracted_file in extracted_files:
+            extracted_file_path = os.path.join(extract_path, extracted_file)
+            if extracted_file_path.endswith(('.tar', '.zip')):
+                log_message(f"Encontrado archivo comprimido adicional: {extracted_file_path}")
+
+                # Descomprimir el archivo adicional (segunda descompresión)
+                run_command([seven_zip_path, "x", extracted_file_path, f"-o{extract_path}"], log_file_path)
+                log_message(f"Segunda descompresión completada en: {extract_path}")
+                break
+
+        # Ejecutar el archivo flashall.bat
+        flashall_path = os.path.join(extract_path, "flashall.bat")
+        if os.path.exists(flashall_path):
+            log_message(f"Ejecutando: {flashall_path}")
+            try:
+                # Abrir una nueva ventana de terminal y ejecutar flashall.bat
+                subprocess.Popen(
+                    ["cmd.exe", "/c", "start", "cmd.exe", "/k", "flashall.bat"],
+                    cwd=extract_path,
+                    creationflags=subprocess.CREATE_NEW_CONSOLE
+                )
+                log_message("Archivo 'flashall.bat' ejecutado con éxito en una nueva ventana.")
+            except Exception as e:
+                log_message(f"Error al ejecutar 'flashall.bat': {e}")
+        else:
+            log_message("El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.")
+
+        log_message("Instalación completada con éxito.")
+    except Exception as e:
+        log_message(f"Error durante la instalación: {e}")
 
 def run_command(command, log_file_path, cwd=None):
     """Ejecuta un comando y captura su salida en tiempo real, incluyendo porcentajes."""

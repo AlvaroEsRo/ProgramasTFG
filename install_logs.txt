@@ -3,41 +3,6 @@ Descomprimiendo el archivo en: C:\ROM\Explorer - cybert
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-1 file, 9500577820 bytes (9061 MiB)
+1 file, 9332671387 bytes (8901 MiB)
 
-Extracting archive: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-37-1_c2dbd-3522b_release-keys-cid50-global_US.tar.gz
---
-Path = C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-37-1_c2dbd-3522b_release-keys-cid50-global_US.tar.gz
-Type = gzip
-Headers Size = 10
-
-Everything is Ok
-
-Size:       11575674880
-Compressed: 9500577820
-Primera descompresión completada en: C:\ROM\Explorer - cybert
-Encontrado archivo comprimido adicional: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-37-1_c2dbd-3522b_release-keys-cid50-global_US.tar
-
-7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
-
-Scanning the drive for archives:
-1 file, 11575674880 bytes (11 GiB)
-
-Extracting archive: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-37-1_c2dbd-3522b_release-keys-cid50-global_US.tar
---
-Path = C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-37-1_c2dbd-3522b_release-keys-cid50-global_US.tar
-Type = tar
-Physical Size = 11575674880
-Headers Size = 88064
-Code Page = UTF-8
-Characteristics = GNU LongName ASCII
-
-Everything is Ok
-
-Folders: 6
-Files: 98
-Size:       11575564717
-Compressed: 11575674880
-Segunda descompresión completada en: C:\ROM\Explorer - cybert
-Ejecutando: fastboot -w
-< waiting for any device >
+Extracting archive: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-16-1_faded-b5152_release-keys-cid50-global_US.tar.gz

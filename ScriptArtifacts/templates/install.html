@@ -54,6 +54,7 @@
 <body>
     <div class="container mt-5 mb-5">
         <div class="text-center">
+            <img src="{{ url_for('static', filename='motorola-logo.png') }}" alt="Motorola Logo" class="logo">
             <h1 class="mb-4">Instalación de Software</h1>
             <p class="lead">Selecciona el archivo TAR.GZ descargado y sigue el progreso de la instalación.</p>
         </div>
@@ -70,13 +71,18 @@
                     </div>
                     <div class="mb-3">
                         <label for="carrier" class="form-label">Selecciona el canal para configurar:</label>
-                        <input type="text" class="form-control" id="carrier" name="carrier" placeholder="Ejemplo: global" required>
+                        <input type="text" class="form-control" id="carrier" name="carrier" placeholder="Ejemplo: reteu" required>
                     </div>
                     <div class="d-grid gap-2">
                         <button type="submit" class="btn btn-primary btn-lg">Iniciar Instalación</button>
                     </div>
                 </form>
                 <br>
+                <div class="d-grid gap-2">
+                    <form action="/" method="GET">
+                        <button type="submit" class="btn btn-secondary btn-lg">Descargar Software</button>
+                    </form>
+                </div>
             </div>
         </div>
         <div id="loading" style="display: none;">
