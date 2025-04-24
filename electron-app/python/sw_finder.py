@@ -57,10 +57,14 @@ def index():
 
 @app.route('/descargar', methods=['POST'])
 def descargar():
-    project = request.form['project']
-    android_version = request.form['android_version']
-    sw_version = request.form['sw_version']
-    build_type = request.form['build_type']
+    data = request.json  # Recibir datos como JSON
+    project = data.get('project')
+    android_version = data.get('android_version')
+    sw_version = data.get('sw_version')
+    build_type = data.get('build_type')
+
+    if not project or not android_version or not sw_version or not build_type:
+        return jsonify({"error": "Faltan datos en la solicitud"}), 400
 
     # Construir la URL de la carpeta
     base_url = "https://artifacts.mot.com/artifactory"
@@ -69,7 +73,7 @@ def descargar():
     # Realizar una solicitud para obtener el índice de la carpeta
     response = requests.get(url, auth=('olallaov', 'Paris2025'))
     if response.status_code != 200:
-        return "No se pudo acceder a la URL proporcionada.", 404
+        return jsonify({"error": "No se pudo acceder a la URL proporcionada."}), 404
 
     # Buscar el nombre del archivo con el patrón en los href
     pattern = re.compile(
@@ -77,31 +81,13 @@ def descargar():
     )
     match = pattern.search(response.text)
     if not match:
-        return "No se encontró un archivo que coincida con el patrón esperado.", 404
+        return jsonify({"error": "No se encontró un archivo que coincida con el patrón esperado."}), 404
 
     file_name = match.group(1)
     file_url = urllib.parse.urljoin(url, file_name)
     print("URL para descargar:", file_url)
 
-    # Abrir diálogo para seleccionar carpeta de destino
-    root = Tk()
-    root.withdraw()  # Oculta la ventana principal de Tkinter
-    carpeta = filedialog.askdirectory(title="Selecciona la carpeta de destino para la descarga")
-    root.destroy()
-    if not carpeta:
-        return "No se seleccionó ninguna carpeta.", 400
-
-    file_path = os.path.join(carpeta, file_name)
-
-    # Descargar el archivo
-    descarga = requests.get(file_url, stream=True, auth=('olallaov', 'Paris2025'))
-    if descarga.status_code == 200:
-        with open(file_path, "wb") as f:
-            for chunk in descarga.iter_content(chunk_size=8192):
-                f.write(chunk)
-        return f"Archivo descargado en: {file_path}"
-    else:
-        return f"Error al descargar el archivo. Código de estado: {descarga.status_code}", 500
+    return jsonify({"message": "Archivo encontrado", "url": file_url})
 
 @app.route('/install', methods=['GET', 'POST'])
 def install():

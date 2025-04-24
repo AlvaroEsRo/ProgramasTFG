@@ -3,4 +3,6 @@
 # Ignorar dependencias de Node en la carpeta Electron
 /electron-app/node_modules/
 
+/electron-app/release-build/
+
 *.tar.gz
