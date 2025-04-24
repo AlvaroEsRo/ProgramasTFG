@@ -6,3 +6,38 @@ Scanning the drive for archives:
 1 file, 9332671387 bytes (8901 MiB)
 
 Extracting archive: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-16-1_faded-b5152_release-keys-cid50-global_US.tar.gz
+--
+Path = C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-16-1_faded-b5152_release-keys-cid50-global_US.tar.gz
+Type = gzip
+Headers Size = 10
+
+Everything is Ok
+
+Size:       11381934080
+Compressed: 9332671387
+Primera descompresión completada en: C:\ROM\Explorer - cybert
+Encontrado archivo comprimido adicional: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-16-1_faded-b5152_release-keys-cid50-global_US.tar
+
+7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
+
+Scanning the drive for archives:
+1 file, 11381934080 bytes (11 GiB)
+
+Extracting archive: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-16-1_faded-b5152_release-keys-cid50-global_US.tar
+--
+Path = C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-16-1_faded-b5152_release-keys-cid50-global_US.tar
+Type = tar
+Physical Size = 11381934080
+Headers Size = 86528
+Code Page = UTF-8
+Characteristics = GNU LongName ASCII
+
+Everything is Ok
+
+Folders: 6
+Files: 98
+Size:       11381827812
+Compressed: 11381934080
+Segunda descompresión completada en: C:\ROM\Explorer - cybert
+El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.
+Instalación completada con éxito.
