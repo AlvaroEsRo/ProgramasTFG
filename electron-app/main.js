@@ -31,6 +31,7 @@ app.on('ready', () => {
             nodeIntegration: true,
             contextIsolation: false,
         },
+        icon: path.join(__dirname, 'assets', 'icon.ico') // Ruta al archivo del ícono
     });
 
     mainWindow.loadURL('http://127.0.0.1:5000/');
