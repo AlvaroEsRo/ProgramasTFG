@@ -1,4 +1,4 @@
-Descomprimiendo el archivo en: C:\ROM\Vienna
+Extracting the file to: C:\ROM\Vienna
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
@@ -24,8 +24,6 @@ Headers Size = 10
   4% - fastboot_vienna_g_sys_userdebug_ . de_intcfg-test-keys_global_US.tar
                                                                            
   6% - fastboot_vienna_g_sys_userdebug_ . de_intcfg-test-keys_global_US.tar
-                                                                           
-  7% - fastboot_vienna_g_sys_userdebug_ . de_intcfg-test-keys_global_US.tar
                                                                            
   8% - fastboot_vienna_g_sys_userdebug_ . de_intcfg-test-keys_global_US.tar
                                                                            
@@ -215,8 +213,8 @@ Everything is Ok
 
 Size:       7558553600
 Compressed: 6055379684
-Primera descompresión completada en: C:\ROM\Vienna
-Encontrado archivo comprimido adicional: C:\ROM\Vienna\fastboot_vienna_g_sys_userdebug_15_V1UI35H.11-39-16_759d6a-588dde_intcfg-test-keys_global_US.tar
+First extraction completed in: C:\ROM\Vienna
+Found additional compressed file: C:\ROM\Vienna\fastboot_vienna_g_sys_userdebug_15_V1UI35H.11-39-16_759d6a-588dde_intcfg-test-keys_global_US.tar
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
@@ -238,45 +236,43 @@ Characteristics = GNU LongName ASCII
 
   0%
     
-  1% 19 - vienna_g_sys_userdebug_15_V1UI3 . ys_global_US\ota\META\liblz4.so
-                                                                           
-  1% 52 - vienna_g_sys_userdebug_15_V1UI . eys_global_US\ota\otatools.zip
+  0% 4
+      
+  1% 32 - vienna_g_sys_userdebug_15_V1UI3 . _global_US\ota\META\apexkeys.txt
+                                                                            
+  2% 52 - vienna_g_sys_userdebug_15_V1UI . eys_global_US\ota\otatools.zip
                                                                          
-  4% 52 - vienna_g_sys_userdebug_15_V1UI . eys_global_US\ota\otatools.zip
+  5% 52 - vienna_g_sys_userdebug_15_V1UI . eys_global_US\ota\otatools.zip
                                                                          
-  6% 52 - vienna_g_sys_userdebug_15_V1UI . eys_global_US\ota\otatools.zip
+  7% 52 - vienna_g_sys_userdebug_15_V1UI . eys_global_US\ota\otatools.zip
                                                                          
-  8% 59
-       
-  9% 78
-       
- 10% 90 - vienna_g_sys_userdebug_15_V1UI3 . cfg-test-keys_global_US\boot.img
+  9% 61 - vienna_g_sys_userdebug_15_V1U . -keys_global_US\boot-debug.img
+                                                                        
+ 10% 88 - vienna_g_sys_userdebug_15_V1U . -keys_global_US\Linux\fastboot
+                                                                        
+ 13% 93 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\modem.img
                                                                             
- 12% 93 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\modem.img
+ 15% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 14% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 18% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 17% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
-                                                                            
- 19% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 20% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  22% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  24% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 26% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 27% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  29% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  31% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 33% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
-                                                                            
- 35% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 34% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  37% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 40% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 39% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  42% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
@@ -284,7 +280,7 @@ Characteristics = GNU LongName ASCII
                                                                             
  46% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 48% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 49% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  51% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
@@ -294,7 +290,7 @@ Characteristics = GNU LongName ASCII
                                                                             
  57% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 60% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 59% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  62% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
@@ -304,40 +300,44 @@ Characteristics = GNU LongName ASCII
                                                                             
  68% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 70% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 71% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 72% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 73% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 74% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 75% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  77% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
  79% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 81% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 82% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 84% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 83% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 86% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 85% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 88% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 87% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 90% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 89% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 92% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 91% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 95% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 93% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 97% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 96% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
- 99% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
+ 98% 99 - vienna_g_sys_userdebug_15_V1UI3 . fg-test-keys_global_US\super.img
                                                                             
+ 99% 103 - vienna_g_sys_userdebug_15_V1UI35 . g-test-keys_global_US\mcf_ota.img
+                                                                               
 Everything is Ok
 
 Folders: 6
 Files: 98
 Size:       7558420423
 Compressed: 7558553600
-Segunda descompresión completada en: C:\ROM\Vienna
-Ejecutando: fastboot oem config carrier reteu
+Second extraction completed in: C:\ROM\Vienna
+Running: fastboot oem config carrier reteu
 < waiting for any device >
+No device connected. Aborting operation.
+No device connected. Aborting installation.

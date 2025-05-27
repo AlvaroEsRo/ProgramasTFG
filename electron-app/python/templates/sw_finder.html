@@ -15,7 +15,7 @@
         }
         .logo {
             width: 200px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
         .card {
             border-radius: 10px;
@@ -59,64 +59,64 @@
         <div class="text-center">
             <img src="{{ url_for('static', filename='assets/motorola-logo.png') }}" alt="Motorola Logo" class="logo">
             <h1 class="mb-4">Software Repository Finder</h1>
-            <p class="lead">Accede rápidamente al repositorio de artifacts de Motorola</p>
+            <p class="lead">Quickly access the Motorola artifacts repository</p>
         </div>
 
         <div class="card">
             <div class="card-header py-3">
-                <h2 class="card-title mb-0">Buscar Software</h2>
+                <h2 class="card-title mb-0">Find Software</h2>
             </div>
             <div class="card-body p-4">
                 <form method="POST">
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="project" class="form-label">Nombre del Proyecto</label>
+                            <label for="project" class="form-label">Project Name</label>
                             <select class="form-select" id="project" name="project" required>
-                                <option value="" disabled selected>Selecciona un proyecto</option>
+                                <option value="" disabled selected>Select a project</option>
                                 {% for project in projects %}
                                 <option value="{{ project }}">{{ project }}</option>
                                 {% endfor %}
                             </select>
-                            <div class="help-text">Código del proyecto (ej. denver, berlin)</div>
+                            <div class="help-text">Project code (e.g. denver, berlin)</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="android_version" class="form-label">Versión de Android</label>
+                            <label for="android_version" class="form-label">Android Version</label>
                             <select class="form-select" id="android_version" name="android_version" required>
-                                <option value="" disabled selected>Selecciona una versión</option>
+                                <option value="" disabled selected>Select a version</option>
                                 {% for version in android_versions %}
                                 <option value="{{ version }}">{{ version }}</option>
                                 {% endfor %}
                             </select>
-                            <div class="help-text">Versión de Android (ej. 14.0, 15.0)</div>
+                            <div class="help-text">Android version (e.g. 14.0, 15.0)</div>
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="sw_version" class="form-label">Versión de Software</label>
-                            <input type="text" class="form-control" id="sw_version" name="sw_version" placeholder="Ejemplo: UOA34.210-33" required>
-                            <div class="help-text">Versión específica del software</div>
+                            <label for="sw_version" class="form-label">Software Version</label>
+                            <input type="text" class="form-control" id="sw_version" name="sw_version" placeholder="Example: UOA34.210-33" required>
+                            <div class="help-text">Specific software version</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="build_type" class="form-label">Tipo de Build</label>
+                            <label for="build_type" class="form-label">Build Type</label>
                             <select class="form-select" id="build_type" name="build_type" required>
-                                <option value="" disabled selected>Selecciona un tipo</option>
+                                <option value="" disabled selected>Select a type</option>
                                 <option value="user">user</option>
                                 <option value="userdebug">userdebug</option>
                             </select>
-                            <div class="help-text">Tipo de compilación (user o userdebug)</div>
+                            <div class="help-text">Build type (user or userdebug)</div>
                         </div>
                     </div>
 
                     <div class="d-grid gap-2">
-                        <button type="submit" id="buscar-sw" class="btn btn-primary btn-lg">Buscar y descargar</button>
+                        <button type="submit" id="buscar-sw" class="btn btn-primary btn-lg">Find and Download</button>
                     </div>
                 </form>
                 <br>
-                <!-- Botón para ir a la vista de instalación -->
+                <!-- Button to go to the installation view -->
                 <div class="d-grid gap-2">
                     <form action="/install" method="GET">
-                        <button type="submit" class="btn btn-secondary btn-lg">Ir a la instalación del SW</button>
+                        <button type="submit" class="btn btn-secondary btn-lg">Go to SW Installation</button>
                     </form>
                 </div>
             </div>
@@ -134,13 +134,13 @@
         document.getElementById('buscar-sw').addEventListener('click', async (event) => {
             event.preventDefault();
 
-            // Capturar los datos del formulario
+            // Capture form data
             const project = document.getElementById('project').value;
             const androidVersion = document.getElementById('android_version').value;
             const swVersion = document.getElementById('sw_version').value;
             const buildType = document.getElementById('build_type').value;
 
-            // Enviar los datos al servidor Flask para generar el enlace
+            // Send data to Flask server to generate the link
             const response = await fetch('http://127.0.0.1:5000/descargar', {
                 method: 'POST',
                 headers: {
@@ -156,12 +156,12 @@
 
             if (response.ok) {
                 const data = await response.json();
-                const url = data.url; // El enlace generado por el servidor Flask
+                const url = data.url; // The link generated by the Flask server
 
-                // Abrir el enlace en el navegador predeterminado
+                // Open the link in the default browser
                 ipcRenderer.invoke('abrir-enlace', url);
             } else {
-                alert('Error al generar el enlace. Verifica los datos ingresados.');
+                alert('Error generating the link. Please check the entered data.');
             }
         });
     </script>

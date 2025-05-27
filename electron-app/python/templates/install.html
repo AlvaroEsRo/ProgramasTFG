@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instalar SW</title>
+    <title>Install SW</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -15,7 +15,7 @@
         }
         .logo {
             width: 200px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
         .card {
             border-radius: 10px;
@@ -48,6 +48,10 @@
             overflow-y: auto;
             font-family: monospace;
             font-size: 0.9rem;
+            width: 98%;
+            margin-left: 1%;      /* <-- Añade esta línea para centrar un poco */
+            margin-right: 1%;     /* <-- Añade esta línea para centrar un poco */
+            white-space: pre;
         }
     </style>
 </head>
@@ -55,39 +59,42 @@
     <div class="container mt-5 mb-5">
         <div class="text-center">
             <img src="{{ url_for('static', filename='assets/motorola-logo.png') }}" alt="Motorola Logo" class="logo">
-            <h1 class="mb-4">Instalación de Software</h1>
-            <p class="lead">Selecciona el archivo TAR.GZ descargado y sigue el progreso de la instalación.</p>
+            <h1 class="mb-4">Software Installation</h1>
+            <p class="lead">Select the downloaded TAR.GZ file and follow the installation progress.</p>
         </div>
 
         <div class="card">
             <div class="card-header py-3">
-                <h2 class="card-title mb-0">Instalar Software</h2>
+                <h2 class="card-title mb-0">Install Software</h2>
             </div>
             <div class="card-body p-4">
                 <form method="POST">
                     <div class="mb-3">
-                        <label for="file_path" class="form-label">Ruta del archivo TAR.GZ:</label>
-                        <input type="text" class="form-control" id="file_path" name="file_path" placeholder="C:\ruta\del\archivo.tar.gz" required>
+                        <label for="file_path" class="form-label">TAR.GZ file path:</label>
+                        <input type="text" class="form-control" id="file_path" name="file_path" placeholder="C:\path\to\file.tar.gz" required>
                     </div>
                     <div class="mb-3">
-                        <label for="carrier" class="form-label">Selecciona el canal para configurar:</label>
-                        <input type="text" class="form-control" id="carrier" name="carrier" placeholder="Ejemplo: reteu" required>
+                        <label for="carrier" class="form-label">Select the carrier to configure:</label>
+                        <input type="text" class="form-control" id="carrier" name="carrier" placeholder="Example: reteu" required>
                     </div>
                     <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary btn-lg">Iniciar Instalación</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Start Installation</button>
                     </div>
                 </form>
                 <br>
                 <div class="d-grid gap-2">
                     <form action="/" method="GET">
-                        <button type="submit" class="btn btn-secondary btn-lg">Descargar Software</button>
+                        <button type="submit" class="btn btn-secondary btn-lg">Download Software</button>
                     </form>
                 </div>
-                <div class="log-container" id="log-box" style="margin-top: 20px; min-height: 100px;"></div>
             </div>
         </div>
+
+        <!-- Log box outside the card, wider -->
+        <div class="log-container mx-auto mt-4" id="log-box"></div>
+
         <div id="loading" style="display: none;">
-            <p>Procesando la instalación, por favor espera...</p>
+            <p>Processing installation, please wait...</p>
         </div>
     </div>
 
@@ -101,13 +108,13 @@
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('log-box').textContent = data.logs;
-                    // Scroll automático al final
+                    // Auto scroll to bottom
                     const logBox = document.getElementById('log-box');
                     logBox.scrollTop = logBox.scrollHeight;
                 });
         }
-        setInterval(updateLogs, 500); // Actualiza cada segundo
-        updateLogs(); // Llama al cargar la página
+        setInterval(updateLogs, 500); // Update every half second
+        updateLogs(); // Call on page load
     </script>
 </body>
 </html>
