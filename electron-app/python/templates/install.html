@@ -83,6 +83,7 @@
                         <button type="submit" class="btn btn-secondary btn-lg">Descargar Software</button>
                     </form>
                 </div>
+                <div class="log-container" id="log-box" style="margin-top: 20px; min-height: 100px;"></div>
             </div>
         </div>
         <div id="loading" style="display: none;">
@@ -94,5 +95,19 @@
         <small class="text-muted">© 2025 Motorola Software Installer</small>
     </footer>
 
+    <script>
+        function updateLogs() {
+            fetch('/logs')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('log-box').textContent = data.logs;
+                    // Scroll automático al final
+                    const logBox = document.getElementById('log-box');
+                    logBox.scrollTop = logBox.scrollHeight;
+                });
+        }
+        setInterval(updateLogs, 500); // Actualiza cada segundo
+        updateLogs(); // Llama al cargar la página
+    </script>
 </body>
 </html>

@@ -25,8 +25,11 @@ app.on('ready', () => {
     }
 
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1000, // Más ancho
+        height: 800, // Más alto
+        minWidth: 900, // Tamaño mínimo recomendado
+        minHeight: 700,
+        resizable: true,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

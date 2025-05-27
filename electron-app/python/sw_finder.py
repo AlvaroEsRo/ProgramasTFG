@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, jsonify, send_file
 import urllib.parse
 import requests
 import zipfile
@@ -13,7 +13,10 @@ from tkinter import Tk, filedialog
 
 app = Flask(__name__)
 
-log_file_path = r"C:\ProgramasTFG\install_logs.txt"  # Archivo temporal para almacenar los logs
+log_file_path = os.path.join(os.path.dirname(__file__), "install_logs.txt")
+
+# Asegúrate de que la carpeta existe
+os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -119,41 +122,40 @@ def install():
 
 def run_installation(file_path, carrier):
     try:
-        # Obtener el directorio del archivo seleccionado
         extract_path = os.path.dirname(file_path)
         log_message(f"Descomprimiendo el archivo en: {extract_path}")
 
-        # Descomprimir el archivo utilizando 7-Zip (primera descompresión)
-        seven_zip_path = r"C:\Program Files\7-Zip\7z.exe"  # Ruta al ejecutable de 7-Zip
-        run_command([seven_zip_path, "x", file_path, f"-o{extract_path}"], log_file_path)
+        seven_zip_path = r"C:\Program Files\7-Zip\7z.exe"
+        run_command([seven_zip_path, "x", file_path, f"-o{extract_path}", "-bso1", "-bsp1"], log_file_path)
         log_message(f"Primera descompresión completada en: {extract_path}")
 
-        # Buscar el archivo descomprimido (por ejemplo, un .tar o .zip)
         extracted_files = os.listdir(extract_path)
         for extracted_file in extracted_files:
             extracted_file_path = os.path.join(extract_path, extracted_file)
             if extracted_file_path.endswith(('.tar', '.zip')):
                 log_message(f"Encontrado archivo comprimido adicional: {extracted_file_path}")
-
-                # Descomprimir el archivo adicional (segunda descompresión)
-                run_command([seven_zip_path, "x", extracted_file_path, f"-o{extract_path}"], log_file_path)
-                log_message(f"Segunda descompresión completada en: {extract_path}")
+                if wait_for_file_ready(extracted_file_path):
+                    run_command([seven_zip_path, "x", extracted_file_path, f"-o{extract_path}", "-bso1", "-bsp1"], log_file_path)
+                    log_message(f"Segunda descompresión completada en: {extract_path}")
+                else:
+                    log_message(f"Error: El archivo {extracted_file_path} no está listo para descomprimir.")
                 break
 
-        # Ejecutar el archivo flashall.bat
+        # Ejecutar fastboot oem config carrier <canal>
+        log_message(f"Ejecutando: fastboot oem config carrier {carrier}")
+        run_command(["fastboot", "oem", "config", "carrier", carrier], log_file_path, cwd=extract_path)
+
+        # Ejecutar fastboot -w
+        log_message("Ejecutando: fastboot -w")
+        run_command(["fastboot", "-w"], log_file_path, cwd=extract_path)
+
+        # Ejecutar flashall.bat en primer plano
         flashall_path = os.path.join(extract_path, "flashall.bat")
         if os.path.exists(flashall_path):
             log_message(f"Ejecutando: {flashall_path}")
-            try:
-                # Abrir una nueva ventana de terminal y ejecutar flashall.bat
-                subprocess.Popen(
-                    ["cmd.exe", "/c", "start", "cmd.exe", "/k", "flashall.bat"],
-                    cwd=extract_path,
-                    creationflags=subprocess.CREATE_NEW_CONSOLE
-                )
-                log_message("Archivo 'flashall.bat' ejecutado con éxito en una nueva ventana.")
-            except Exception as e:
-                log_message(f"Error al ejecutar 'flashall.bat': {e}")
+            # Ejecutar en primer plano y mostrar logs
+            run_command([flashall_path], log_file_path, cwd=extract_path)
+            log_message("Archivo 'flashall.bat' ejecutado con éxito.")
         else:
             log_message("El archivo 'flashall.bat' no se encontró en la carpeta descomprimida.")
 
@@ -162,28 +164,25 @@ def run_installation(file_path, carrier):
         log_message(f"Error durante la instalación: {e}")
 
 def run_command(command, log_file_path, cwd=None):
-    """Ejecuta un comando y captura su salida en tiempo real, incluyendo porcentajes."""
     try:
-        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, cwd=cwd)
-        with open(log_file_path, "a") as log_file:
+        process = subprocess.Popen(
+            command,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            cwd=cwd,
+            bufsize=1
+        )
+        with open(log_file_path, "a", buffering=1, encoding="utf-8") as log_file:
             for line in process.stdout:
-                # Escribir cada línea en el archivo de logs
                 log_file.write(line)
                 log_file.flush()
-
-                # Mostrar la línea en la terminal
                 print(line, end="")
-
-                # Extraer y mostrar el porcentaje de progreso si está presente
-                match = re.search(r'(\d+)%', line)
-                if match:
-                    percentage = match.group(1)
-                    print(f"Progreso de descompresión: {percentage}%")
         process.wait()
         if process.returncode != 0:
             raise subprocess.CalledProcessError(process.returncode, command)
     except Exception as e:
-        with open(log_file_path, "a") as log_file:
+        with open(log_file_path, "a", encoding="utf-8") as log_file:
             log_file.write(f"Error al ejecutar el comando: {e}\n")
         print(f"Error al ejecutar el comando: {e}")
 
@@ -192,6 +191,34 @@ def log_message(message):
     with open(log_file_path, "a") as log_file:
         log_file.write(message + "\n")
     print(message)
+
+@app.route('/logs')
+def get_logs():
+    try:
+        with open(log_file_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        return jsonify({"logs": content})
+    except UnicodeDecodeError:
+        with open(log_file_path, "r", encoding="latin1") as f:
+            content = f.read()
+        return jsonify({"logs": content})
+    except Exception as e:
+        return jsonify({"logs": f"Error leyendo logs: {e}"})
+
+import time
+
+def wait_for_file_ready(filepath, timeout=60):
+    """Espera a que el archivo exista y su tamaño deje de cambiar."""
+    start = time.time()
+    last_size = -1
+    while time.time() - start < timeout:
+        if os.path.exists(filepath):
+            size = os.path.getsize(filepath)
+            if size == last_size:
+                return True
+            last_size = size
+        time.sleep(1)
+    return False
 
 if __name__ == '__main__':
     app.run(debug=True)
