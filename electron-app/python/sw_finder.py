@@ -144,7 +144,6 @@ def run_installation(file_path, carrier):
             if extracted_file_path.endswith(('.tar', '.zip')):
                 log_message(f"Found additional compressed file: {extracted_file_path}")
                 if wait_for_file_ready(extracted_file_path):
-                    # Second extraction: extract to a subfolder named after the tar (optional, but recommended)
                     second_extract_folder = os.path.join(extract_path, os.path.splitext(os.path.basename(extracted_file_path))[0])
                     os.makedirs(second_extract_folder, exist_ok=True)
                     run_command([seven_zip_path, "x", extracted_file_path, f"-o{second_extract_folder}", "-bso1", "-bsp1"], log_file_path)
@@ -152,9 +151,9 @@ def run_installation(file_path, carrier):
                     last_extracted_folder = second_extract_folder
                 else:
                     log_message(f"Error: The file {extracted_file_path} is not ready to extract.")
-                break
+        # break  # <-- Elimina este break o ponlo solo si quieres salir tras el primer .tar/.zip
 
-        # Execute fastboot oem config carrier <carrier>
+        # Ahora, fuera del bucle, ejecuta los comandos fastboot y el batch
         log_message(f"Running: fastboot oem config carrier {carrier}")
         if not run_fastboot_command(["fastboot", "oem", "config", "carrier", carrier], log_file_path, cwd=last_extracted_folder):
             log_message("No device connected. Aborting installation.")
@@ -165,11 +164,9 @@ def run_installation(file_path, carrier):
             log_message("No device connected. Aborting installation.")
             return
 
-        # Busca flashall.bat recursivamente en la última carpeta extraída
         flashall_path = find_flashall_bat(last_extracted_folder)
         if flashall_path:
             log_message(f"Running: {flashall_path}")
-            # Ejecuta en primer plano en la carpeta donde está el batch
             run_command(["cmd.exe", "/c", "start", "flashall.bat"], log_file_path, cwd=os.path.dirname(flashall_path))
             log_message("File 'flashall.bat' executed successfully.")
         else:
@@ -324,26 +321,6 @@ def get_devices():
 
 # Global list to store device info
 devices_info = []
-
-def get_imei(serial):
-    """Get IMEI using adb for a given serial number."""
-    try:
-        output = subprocess.check_output(
-            ['adb', '-s', serial, 'shell', 'service', 'call', 'iphonesubinfo', '1'],
-            text=True, timeout=5
-        )
-        # Extract IMEI from output (may need adjustment for some devices)
-        imei = ''.join(re.findall(r"'(\d+)'", output))
-        if not imei:
-            # Fallback for some devices
-            output2 = subprocess.check_output(
-                ['adb', '-s', serial, 'shell', 'getprop', 'persist.radio.imei'],
-                text=True, timeout=5
-            )
-            imei = output2.strip()
-        return imei
-    except Exception:
-        return "Unknown"
 
 def extract_sw_info_from_path(file_path):
     """
