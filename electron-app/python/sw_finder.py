@@ -37,7 +37,7 @@ def index():
             url = f"{base_url}/{project}/{android_version}/{sw_version}/{project}_g_sys/{build_type}/release-keys_cid50/"
 
         # Make a request to get the folder index
-        response = requests.get(url, auth=('olallaov', 'Paris2025'))
+        response = requests.get(url)
         if response.status_code != 200:
             return "Could not access the provided URL.", 404
 
@@ -129,34 +129,42 @@ def run_installation(file_path, carrier):
         run_command([seven_zip_path, "x", file_path, f"-o{extract_path}", "-bso1", "-bsp1"], log_file_path)
         log_message(f"First extraction completed in: {extract_path}")
 
+        # Track the last extracted folder
+        last_extracted_folder = extract_path
+
         extracted_files = os.listdir(extract_path)
         for extracted_file in extracted_files:
             extracted_file_path = os.path.join(extract_path, extracted_file)
             if extracted_file_path.endswith(('.tar', '.zip')):
                 log_message(f"Found additional compressed file: {extracted_file_path}")
                 if wait_for_file_ready(extracted_file_path):
-                    run_command([seven_zip_path, "x", extracted_file_path, f"-o{extract_path}", "-bso1", "-bsp1"], log_file_path)
-                    log_message(f"Second extraction completed in: {extract_path}")
+                    # Second extraction: extract to a subfolder named after the tar (optional, but recommended)
+                    second_extract_folder = os.path.join(extract_path, os.path.splitext(os.path.basename(extracted_file_path))[0])
+                    os.makedirs(second_extract_folder, exist_ok=True)
+                    run_command([seven_zip_path, "x", extracted_file_path, f"-o{second_extract_folder}", "-bso1", "-bsp1"], log_file_path)
+                    log_message(f"Second extraction completed in: {second_extract_folder}")
+                    last_extracted_folder = second_extract_folder
                 else:
                     log_message(f"Error: The file {extracted_file_path} is not ready to extract.")
                 break
 
         # Execute fastboot oem config carrier <carrier>
         log_message(f"Running: fastboot oem config carrier {carrier}")
-        if not run_fastboot_command(["fastboot", "oem", "config", "carrier", carrier], log_file_path, cwd=extract_path):
+        if not run_fastboot_command(["fastboot", "oem", "config", "carrier", carrier], log_file_path, cwd=last_extracted_folder):
             log_message("No device connected. Aborting installation.")
             return
 
         log_message("Running: fastboot -w")
-        if not run_fastboot_command(["fastboot", "-w"], log_file_path, cwd=extract_path):
+        if not run_fastboot_command(["fastboot", "-w"], log_file_path, cwd=last_extracted_folder):
             log_message("No device connected. Aborting installation.")
             return
 
-        # Execute flashall.bat in the foreground
-        flashall_path = os.path.join(extract_path, "flashall.bat")
-        if os.path.exists(flashall_path):
+        # Busca flashall.bat recursivamente en la última carpeta extraída
+        flashall_path = find_flashall_bat(last_extracted_folder)
+        if flashall_path:
             log_message(f"Running: {flashall_path}")
-            run_command([flashall_path], log_file_path, cwd=extract_path)
+            # Ejecuta en primer plano en la carpeta donde está el batch
+            run_command(["cmd.exe", "/c", "start", "flashall.bat"], log_file_path, cwd=os.path.dirname(flashall_path))
             log_message("File 'flashall.bat' executed successfully.")
         else:
             log_message("The file 'flashall.bat' was not found in the extracted folder.")
@@ -276,6 +284,12 @@ def run_fastboot_command(command, log_file_path, cwd=None, timeout=30):
             log_file.write(f"Error running command: {e}\n")
         print(f"Error running command: {e}")
         return False
+
+def find_flashall_bat(root_folder):
+    for dirpath, dirnames, filenames in os.walk(root_folder):
+        if "flashall.bat" in filenames:
+            return os.path.join(dirpath, "flashall.bat")
+    return None
 
 if __name__ == '__main__':
     app.run(debug=True)
