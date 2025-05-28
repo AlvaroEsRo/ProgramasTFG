@@ -10,6 +10,7 @@ import threading
 import time
 import sys
 from tkinter import Tk, filedialog
+import pandas as pd
 
 app = Flask(__name__)
 
@@ -120,7 +121,12 @@ def install():
 
     return render_template('install.html')
 
+# Guarda el último path usado en la instalación
+last_installed_file_path = None
+
 def run_installation(file_path, carrier):
+    global last_installed_file_path
+    last_installed_file_path = file_path
     try:
         extract_path = os.path.dirname(file_path)
         log_message(f"Extracting the file to: {extract_path}")
@@ -290,6 +296,115 @@ def find_flashall_bat(root_folder):
         if "flashall.bat" in filenames:
             return os.path.join(dirpath, "flashall.bat")
     return None
+
+@app.route('/devices')
+def get_devices():
+    devices = []
+    # Check ADB devices
+    try:
+        adb_output = subprocess.check_output(['adb', 'devices'], text=True)
+        for line in adb_output.strip().split('\n')[1:]:
+            if line.strip() and 'device' in line:
+                serial = line.split()[0]
+                devices.append({'type': 'adb', 'serial': serial})
+    except Exception as e:
+        pass  # adb not found or not running
+
+    # Check Fastboot devices
+    try:
+        fastboot_output = subprocess.check_output(['fastboot', 'devices'], text=True)
+        for line in fastboot_output.strip().split('\n'):
+            if line.strip():
+                serial = line.split()[0]
+                devices.append({'type': 'fastboot', 'serial': serial})
+    except Exception as e:
+        pass  # fastboot not found or not running
+
+    return jsonify({'devices': devices})
+
+# Global list to store device info
+devices_info = []
+
+def get_imei(serial):
+    """Get IMEI using adb for a given serial number."""
+    try:
+        output = subprocess.check_output(
+            ['adb', '-s', serial, 'shell', 'service', 'call', 'iphonesubinfo', '1'],
+            text=True, timeout=5
+        )
+        # Extract IMEI from output (may need adjustment for some devices)
+        imei = ''.join(re.findall(r"'(\d+)'", output))
+        if not imei:
+            # Fallback for some devices
+            output2 = subprocess.check_output(
+                ['adb', '-s', serial, 'shell', 'getprop', 'persist.radio.imei'],
+                text=True, timeout=5
+            )
+            imei = output2.strip()
+        return imei
+    except Exception:
+        return "Unknown"
+
+def extract_sw_info_from_path(file_path):
+    """
+    Extracts Project Name, SW type and SW version from the firmware file path.
+    Returns (project_name, sw_type, sw_version) or ("Unknown", "Unknown", "Unknown") if not found.
+    """
+    # Example filename: fastboot_vienna_g_sys_userdebug_15_V1UI35H.11-39-16_759d6a-588dde_intcfg-test-keys_global_US.tar.gz
+    basename = os.path.basename(file_path)
+    match = re.search(r'fastboot_([a-z0-9]+)_g_sys_(userdebug|user)_(\d+_[A-Za-z0-9\.\-]+)', basename, re.IGNORECASE)
+    if match:
+        project_name = match.group(1)
+        sw_type = match.group(2)
+        sw_version = match.group(3)
+        return project_name, sw_type, sw_version
+    return "Unknown", "Unknown", "Unknown"
+
+@app.route('/export_excel', methods=['POST'])
+def export_excel():
+    data = request.get_json()
+    file_path = data.get('file_path', '').strip()
+    if not file_path:
+        return jsonify({"error": "No file path provided."}), 400  # Devuelve error si no hay ruta
+
+    # Extrae project_name, sw_type y sw_version del path
+    project_name, sw_type, sw_version = extract_sw_info_from_path(file_path)
+    devices = []
+    try:
+        adb_output = subprocess.check_output(['adb', 'devices'], text=True)
+        for line in adb_output.strip().split('\n')[1:]:
+            if line.strip() and 'device' in line:
+                serial = line.split()[0]
+                devices.append({
+                    "Project Name": project_name,
+                    "SW type": sw_type,
+                    "Serial Number": serial,
+                    "SW version": sw_version
+                })
+    except Exception:
+        pass
+    try:
+        fastboot_output = subprocess.check_output(['fastboot', 'devices'], text=True)
+        for line in fastboot_output.strip().split('\n'):
+            if line.strip():
+                serial = line.split()[0]
+                devices.append({
+                    "Project Name": project_name,
+                    "SW type": sw_type,
+                    "Serial Number": serial,
+                    "SW version": sw_version
+                })
+    except Exception:
+        pass
+
+    if devices:
+        devices_info = devices
+
+    df = pd.DataFrame(devices_info)
+    # Guarda el Excel en la carpeta python
+    excel_path = os.path.join(os.path.dirname(__file__), "devices_report.xlsx")
+    df.to_excel(excel_path, index=False)
+    return send_file(excel_path, as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)

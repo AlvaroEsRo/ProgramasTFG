@@ -15,7 +15,7 @@
         }
         .logo {
             width: 200px;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
         }
         .card {
             border-radius: 10px;
@@ -68,7 +68,7 @@
                 <h2 class="card-title mb-0">Install Software</h2>
             </div>
             <div class="card-body p-4">
-                <form method="POST">
+                <form method="POST" id="install-form">
                     <div class="mb-3">
                         <label for="file_path" class="form-label">TAR.GZ file path:</label>
                         <input type="text" class="form-control" id="file_path" name="file_path" placeholder="C:\path\to\file.tar.gz" required>
@@ -77,16 +77,32 @@
                         <label for="carrier" class="form-label">Select the carrier to configure:</label>
                         <input type="text" class="form-control" id="carrier" name="carrier" placeholder="Example: reteu" required>
                     </div>
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary btn-lg">Start Installation</button>
+                    <div class="mb-3">
+                        <label class="form-label">Connected devices:</label>
+                        <div class="d-flex align-items-center gap-2">
+                            <div id="device-list" class="ms-2"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3 mt-4 mb-3">
+                        <button type="button" class="btn btn-outline-primary btn-lg" onclick="refreshDevices()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                <path d="M2 2v6h6"/>
+                                <path d="M12.146 3.146a6 6 0 1 1-1.292 9.292"/>
+                                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 1 1 .908-.418A6 6 0 1 1 8 2v1z"/>
+                            </svg>
+                            Refresh Devices
+                        </button>
+                        <button type="submit" class="btn btn-primary btn-lg" form="install-form">
+                            Start Installation
+                        </button>
+                        <button type="button" class="btn btn-success btn-lg" onclick="exportExcel()">
+                            Export to Excel
+                        </button>
+                        <a href="/" class="btn btn-secondary btn-lg">
+                            Download Software
+                        </a>
                     </div>
                 </form>
-                <br>
-                <div class="d-grid gap-2">
-                    <form action="/" method="GET">
-                        <button type="submit" class="btn btn-secondary btn-lg">Download Software</button>
-                    </form>
-                </div>
             </div>
         </div>
 
@@ -115,6 +131,55 @@
         }
         setInterval(updateLogs, 500); // Update every half second
         updateLogs(); // Call on page load
+
+        function refreshDevices() {
+            fetch('/devices')
+                .then(response => response.json())
+                .then(data => {
+                    const deviceList = document.getElementById('device-list');
+                    if (data.devices.length === 0) {
+                        deviceList.innerHTML = '<span class="text-danger">No devices detected.</span>';
+                    } else {
+                        deviceList.innerHTML = data.devices.map(
+                            d => `<span class="badge rounded-pill bg-success me-1">${d.type.toUpperCase()}: <span class="fw-bold">${d.serial}</span></span>`
+                        ).join('');
+                    }
+                });
+        }
+
+        function exportExcel() {
+            const filePath = document.getElementById('file_path').value.trim();
+            if (!filePath) {
+                alert("Please enter the TAR.GZ file path before exporting to Excel.");
+                return;
+            }
+            fetch('/export_excel', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({file_path: filePath})
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(data => { throw new Error(data.error || "Error exporting Excel"); });
+                }
+                return response.blob();
+            })
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "devices_report.xlsx";
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            })
+            .catch(err => {
+                alert(err.message);
+            });
+        }
+
+        // Llama al cargar la página
+        refreshDevices();
     </script>
 </body>
 </html>
