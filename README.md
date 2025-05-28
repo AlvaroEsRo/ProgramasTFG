@@ -87,3 +87,39 @@ Si deseas contribuir al proyecto, por favor abre un issue o envía un pull reque
 ## Licencia
 
 Este proyecto está bajo la licencia [MIT](https://opensource.org/licenses/MIT).
+
+## Distribución como ejecutable único (Windows)
+
+Si deseas distribuir la aplicación como un único archivo ejecutable para Windows (sin requerir Python instalado), sigue este procedimiento:
+
+1. **Empaqueta el backend Python:**
+   - Instala PyInstaller:
+     ```bash
+     pip install pyinstaller
+     ```
+   - Desde la carpeta `python`, ejecuta:
+     ```bash
+     pyinstaller --onefile --add-data "templates;templates" --add-data "static;static" sw_finder.py
+     ```
+   - El ejecutable se generará en `python/dist/sw_finder.exe`.
+
+2. **Configura Electron para lanzar el ejecutable:**
+   - En el archivo `main.js` de Electron, cambia la línea que lanza Flask:
+     ```js
+     flaskProcess = spawn(path.join(__dirname, 'python', 'dist', 'sw_finder.exe'));
+     ```
+
+3. **Empaqueta la aplicación Electron:**
+   - Instala electron-builder:
+     ```bash
+     npm install --save-dev electron-builder
+     ```
+   - Añade la configuración adecuada en `package.json` para incluir el ejecutable.
+   - Ejecuta el build:
+     ```bash
+     npm run build
+     ```
+   - El instalador generado en la carpeta `dist/` funcionará en cualquier Windows sin requerir Python.
+
+**Nota:**  
+Asegúrate de que cualquier dependencia externa (como 7-Zip) esté disponible en el equipo destino o incluida en el paquete.
