@@ -6,3 +6,6 @@
 /electron-app/release-build/
 
 *.tar.gz
+
+/electron-app/python/install_logs.txt
+/electron-app/python/devices_report.xlsx
