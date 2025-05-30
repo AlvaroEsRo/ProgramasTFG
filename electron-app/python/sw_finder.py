@@ -107,6 +107,9 @@ def install():
         match = re.match(r'^"(.*)"$', raw_file_path)
         file_path = match.group(1) if match else raw_file_path
 
+        # Elimina las comillas dobles al principio y al final, si las hay
+        file_path = file_path.strip('"')
+
         carrier = request.form.get('carrier', 'default').strip()
         # Validate that the file path exists
         if not os.path.exists(file_path):
@@ -143,7 +146,7 @@ def run_installation(file_path, carrier):
             extracted_file_path = os.path.join(extract_path, extracted_file)
             if extracted_file_path.endswith(('.tar', '.zip')):
                 log_message(f"Found additional compressed file: {extracted_file_path}")
-                if wait_for_file_ready(extracted_file_path):
+                if wait_for_file_ready(extracted_file_path, timeout=300):
                     second_extract_folder = os.path.join(extract_path, os.path.splitext(os.path.basename(extracted_file_path))[0])
                     os.makedirs(second_extract_folder, exist_ok=True)
                     run_command([seven_zip_path, "x", extracted_file_path, f"-o{second_extract_folder}", "-bso1", "-bsp1"], log_file_path)
@@ -194,10 +197,12 @@ def run_command(command, log_file_path, cwd=None):
         process.wait()
         if process.returncode != 0:
             raise subprocess.CalledProcessError(process.returncode, command)
+        return True
     except Exception as e:
         with open(log_file_path, "a", encoding="utf-8") as log_file:
             log_file.write(f"Error running command: {e}\n")
         print(f"Error running command: {e}")
+        return False
 
 def log_message(message):
     """Writes a message to the log file and prints it to the terminal."""

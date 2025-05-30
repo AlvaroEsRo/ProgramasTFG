@@ -9,3 +9,6 @@
 
 /electron-app/python/install_logs.txt
 /electron-app/python/devices_report.xlsx
+
+/ScriptExcel/bugs_database.db
+/ScriptExcel/uploads/
