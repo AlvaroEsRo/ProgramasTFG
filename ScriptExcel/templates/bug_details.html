@@ -27,7 +27,7 @@
                     </span>
                 </h2>
                 <div>
-                    <a href="{{ url_for('jira_report', bug_number=bug.bug_number) }}" class="btn btn-success me-2">Crear Ticket Jira</a>
+                    <a href="{{ url_for('jira_report', bug_number=bug.bug_number, filename=filename) }}" class="btn btn-success me-2">Crear Ticket Jira</a>
                     <a href="{{ url_for('analyze_bugs', filename=filename) }}" class="btn btn-outline-primary">Volver a resultados</a>
                 </div>
             </div>
@@ -144,8 +144,8 @@
                 </span>
             </h2>
             <div>
-                <a href="{{ url_for('saved_crs') }}" class="btn btn-info me-2">Ver CRs guardados</a>
-                <a href="{{ url_for('jira_report', bug_number=bug.bug_number) }}" class="btn btn-success me-2">Crear Ticket Jira</a>
+                <a href="{{ url_for('saved_crs', filename=filename) }}" class="btn btn-info me-2">Ver CRs guardados</a>
+                <a href="{{ url_for('jira_report', bug_number=bug.bug_number, filename=filename) }}" class="btn btn-success me-2">Crear Ticket Jira</a>
                 <a href="{{ url_for('analyze_bugs', filename=filename) }}" class="btn btn-outline-primary">Volver a resultados</a>
             </div>
         </div>

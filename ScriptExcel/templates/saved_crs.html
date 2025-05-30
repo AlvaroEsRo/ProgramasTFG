@@ -40,7 +40,7 @@
                 <img src="https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/favicon.png" alt="Jira Logo" class="me-2" style="height: 32px;">
                 <h2 class="mb-0">CRs Guardados para Jira</h2>
             </div>
-            <a href="/" class="btn btn-light">Inicio</a>
+            <a href="{{ url_for('analyze_bugs', filename=filename) }}" class="btn btn-light">Inicio</a>
         </div>
         
         <div class="jira-card">

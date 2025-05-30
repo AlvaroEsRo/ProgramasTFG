@@ -313,8 +313,8 @@ def view_bug(bug_number, filename):
     return render_template('bug_details.html', bug=bug_info, filename=filename)
 # Añadir esta nueva ruta antes del if __name__ == '__main__':
 
-@app.route('/jira_report/<bug_number>', methods=['GET', 'POST'])
-def jira_report(bug_number):
+@app.route('/jira_report/<bug_number>/<filename>', methods=['GET', 'POST'])
+def jira_report(bug_number, filename):
     conn = sqlite3.connect('bugs_database.db')
     cursor = conn.cursor()
     
@@ -396,10 +396,10 @@ def jira_report(bug_number):
         conn.close()
         
         # Redirigir a la página de visualización del CR
-        return redirect(url_for('view_cr', cr_id=cr_id))
+        return redirect(url_for('view_bug', bug_number=bug_number, filename=filename))
     
     conn.close()
-    return render_template('jira_report.html', bug=bug_info)
+    return render_template('jira_report.html', bug=bug_info, filename=filename)
 
 @app.route('/view_cr/<int:cr_id>')
 def view_cr(cr_id):
@@ -447,8 +447,8 @@ def view_cr(cr_id):
     conn.close()
     return render_template('view_cr.html', cr=cr_info)
 
-@app.route('/saved_crs')
-def saved_crs():
+@app.route('/saved_crs/<filename>')
+def saved_crs(filename):
     conn = sqlite3.connect('bugs_database.db')
     cursor = conn.cursor()
     
@@ -463,7 +463,7 @@ def saved_crs():
     crs = cursor.fetchall()
     conn.close()
     
-    return render_template('saved_crs.html', crs=crs)
+    return render_template('saved_crs.html', crs=crs, filename=filename)
 
 if __name__ == '__main__':
     init_db()  # Inicializar la tabla de bugs

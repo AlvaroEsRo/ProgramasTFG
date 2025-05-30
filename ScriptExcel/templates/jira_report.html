@@ -218,8 +218,7 @@
                 
                 <div class="d-flex justify-content-between mt-4">
                     <div>
-                        <a href="{{ url_for('view_bug', bug_number=bug.bug_number, filename='placeholder') }}" 
-                           class="jira-button jira-button-secondary">Cancelar</a>
+                        <a href="{{ url_for('view_bug', bug_number=bug.bug_number, filename=filename) }}" class="btn btn-outline-primary">Volver al bug</a>
                     </div>
                     <div>
                         <button type="button" id="copyButton" class="jira-button jira-button-secondary me-2">
