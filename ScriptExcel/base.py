@@ -88,7 +88,7 @@ def analyze_bugs(filename):
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     
     # Leer el Excel desde la fila 11 (índice 10)
-    df = pd.read_excel(filepath, header=10)
+    df = pd.read_excel(filepath, header=4)
     
     # Imprime los nombres de las columnas para diagnóstico
     print("Columnas disponibles:", df.columns.tolist())
