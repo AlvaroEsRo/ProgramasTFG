@@ -401,8 +401,8 @@ def jira_report(bug_number, filename):
     conn.close()
     return render_template('jira_report.html', bug=bug_info, filename=filename)
 
-@app.route('/view_cr/<int:cr_id>')
-def view_cr(cr_id):
+@app.route('/view_cr/<int:cr_id>/<filename>')
+def view_cr(cr_id, filename):
     conn = sqlite3.connect('bugs_database.db')
     cursor = conn.cursor()
     
@@ -445,7 +445,7 @@ def view_cr(cr_id):
         cr_info['bug_name'] = bug_name[0]
     
     conn.close()
-    return render_template('view_cr.html', cr=cr_info)
+    return render_template('view_cr.html', cr=cr_info, filename=filename)
 
 @app.route('/saved_crs/<filename>')
 def saved_crs(filename):

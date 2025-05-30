@@ -95,7 +95,7 @@
                 <h2 class="mb-0">CR #{{ cr.id }}</h2>
             </div>
             <div>
-                <a href="{{ url_for('saved_crs') }}" class="btn btn-light me-2">Ver todos los CRs</a>
+                <a href="{{ url_for('saved_crs', filename=filename) }}" class="btn btn-light me-2">Ver todos los CRs</a>
                 <a href="/" class="btn btn-outline-light">Inicio</a>
             </div>
         </div>
@@ -157,7 +157,7 @@
                     <button id="copyToClipboard" class="jira-button"><i class="fas fa-copy me-2"></i> Copiar para Jira</button>
                 </div>
                 <div>
-                    <a href="{{ url_for('saved_crs') }}" class="btn btn-secondary">Volver a la lista</a>
+                    <a href="{{ url_for('saved_crs', filename=filename) }}" class="btn btn-secondary">Volver a la lista</a>
                 </div>
             </div>
         </div>
