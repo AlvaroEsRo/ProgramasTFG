@@ -1,246 +1,248 @@
-Extracting the file to: C:\ROM\Vienna
+Extracting the file to: C:\ROM\Explorer - cybert
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-  0M Scan C:\ROM\Vienna\
-                        
-1 file, 5591930096 bytes (5333 MiB)
+  0M Scan C:\ROM\Explorer - cybert\
+                                   
+1 file, 9595205998 bytes (9151 MiB)
 
-Extracting archive: C:\ROM\Vienna\fastboot_vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US.tar.gz
+Extracting archive: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-46-7_612303-78476_release-keys-cid50-global_US.tar.gz
 --
-Path = C:\ROM\Vienna\fastboot_vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US.tar.gz
+Path = C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-46-7_612303-78476_release-keys-cid50-global_US.tar.gz
 Type = gzip
 Headers Size = 10
 
   0%
     
-  0% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  1% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  2% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  3% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  4% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  5% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  6% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  7% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  8% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  9% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 10% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 11% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 12% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 13% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 14% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 15% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 16% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 17% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 18% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 19% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 20% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 21% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 22% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 23% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 24% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 26% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 27% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 28% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 29% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 30% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 31% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 32% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 33% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 34% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 35% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 36% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 37% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 38% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 39% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 40% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 41% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 42% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 43% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 44% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 45% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 46% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 47% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 48% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 49% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 50% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 51% - fastboot_vienna_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
+  0% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  1% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  2% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  3% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  4% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  5% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  6% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  7% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  8% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+  9% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 10% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 11% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 12% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 13% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 14% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 15% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 16% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 17% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 18% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 19% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 20% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 21% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 22% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 23% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 24% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 25% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 26% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 27% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 28% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 29% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 30% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 31% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 32% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 33% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 34% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 35% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 36% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 37% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 38% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 39% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 40% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 41% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 42% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 43% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 44% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 45% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 46% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 47% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 48% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 49% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 50% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
+                                                                        
+ 51% - fastboot_cybert_g_sys_user_15_V . elease-keys-cid50-global_US.tar
 Error running command: [Errno 22] Invalid argument
-First extraction completed in: C:\ROM\Vienna
-Found additional compressed file: C:\ROM\Vienna\fastboot_vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US.tar
+First extraction completed in: C:\ROM\Explorer - cybert
+Found additional compressed file: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-46-7_612303-78476_release-keys-cid50-global_US.tar
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-  0M Scan C:\ROM\Vienna\
-                        
-1 file, 6987909120 bytes (6665 MiB)
+  0M Scan C:\ROM\Explorer - cybert\
+                                   
+1 file, 11680501760 bytes (11 GiB)
 
-Extracting archive: C:\ROM\Vienna\fastboot_vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US.tar
- 85% 9 Open
+Extracting archive: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-46-7_612303-78476_release-keys-cid50-global_US.tar
+ 91% 3 Open
            
 --
-Path = C:\ROM\Vienna\fastboot_vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US.tar
+Path = C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-46-7_612303-78476_release-keys-cid50-global_US.tar
 Type = tar
-Physical Size = 6987909120
-Headers Size = 105472
+Physical Size = 11680501760
+Headers Size = 90624
 Code Page = UTF-8
 Characteristics = GNU LongName ASCII
 
   0%
     
-  2% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
-  5% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
-  7% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 10% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 13% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 16% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 18% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 21% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 24% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 26% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 28% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 31% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 33% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 36% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 38% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 40% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 43% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 45% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 47% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 49% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 51% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 53% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 55% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 57% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 59% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 61% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 63% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 64% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 66% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 68% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 69% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 71% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 73% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 75% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 77% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 79% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 81% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 82% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 84% 8 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\super.img
-                                                                          
- 85% 12 - vienna_g_sys_user_15_V1UI35H.11- . ys-cid50-global_US\blankflash.zip
-                                                                              
- 87% 17 - vienna_g_sys_user_15_V1UI35H.11 . -keys-cid50-global_US\modem.img
-                                                                           
- 88% 22 - vienna_g_sys_user_15_V1UI35H.11 . keys-cid50-global_US\hwflash.bat
-                                                                            
- 88% 34 - vienna_g_sys_user_15_V1UI35H.11- . al_US\ota\META\kernel_configs.txt
-                                                                              
- 88% 45 - vienna_g_sys_user_15_V1UI35H.11- . system_dlkm_filesystem_config.txt
-                                                                              
- 88% 59
-       
- 89% 65 - vienna_g_sys_user_15_V1UI35H.11-3 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 91% 65 - vienna_g_sys_user_15_V1UI35H.11-3 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 93% 65 - vienna_g_sys_user_15_V1UI35H.11-3 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 95% 72 - vienna_g_sys_user_15_V1UI35H.11- . s-cid50-global_US\vendor_dlkm.img
-                                                                              
+  1% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+  3% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+  4% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+  5% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+  7% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+  8% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 10% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 11% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 13% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 14% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 15% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 17% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 18% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 19% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 21% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 22% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 24% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 25% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 27% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 28% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 29% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 31% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 32% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 33% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 34% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 35% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 36% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 37% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 38% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 40% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 41% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 42% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 44% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 45% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 47% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 48% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 49% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 51% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 52% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 53% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 55% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 56% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 58% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 59% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 60% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 62% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 63% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 64% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 66% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
+                                                                        
+ 67% 2 - cybert_g_sys_user_15_V2VV35.58 . keys-cid50-global_US\super.img
 Error running command: [Errno 22] Invalid argument
-Second extraction completed in: C:\ROM\Vienna\fastboot_vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US
+Second extraction completed in: C:\ROM\Explorer - cybert\fastboot_cybert_g_sys_user_15_V2VV35.58-46-7_612303-78476_release-keys-cid50-global_US
 Running: fastboot oem config carrier reteu
 (bootloader) <UTAG name="carrier" type="str" protected="false">
 (bootloader)   <value>
@@ -253,13 +255,12 @@ Running: fastboot oem config carrier reteu
 OKAY [  0.003s]
 Finished. Total time: 0.003s
 Running: fastboot -w
-Erasing 'userdata'                                 OKAY [  0.219s]
+Erasing 'userdata'                                 OKAY [  0.084s]
 Erase successful, but not automatically formatting.
 File system type raw not supported.
-Erasing 'metadata'                                 OKAY [  0.177s]
+Erasing 'metadata'                                 OKAY [  0.070s]
 Erase successful, but not automatically formatting.
 File system type raw not supported.
-Finished. Total time: 0.408s
-Running: C:\ROM\Vienna\fastboot_vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US\vienna_g_sys_user_15_V1UI35H.11-39-16_759d6a-588dde_release-keys-cid50-global_US\flashall.bat
-File 'flashall.bat' executed successfully.
+Finished. Total time: 0.164s
+The file 'flashall.bat' was not found in the extracted folder.
 Installation completed successfully.

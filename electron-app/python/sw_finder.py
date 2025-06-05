@@ -167,7 +167,7 @@ def run_installation(file_path, carrier):
             log_message("No device connected. Aborting installation.")
             return
 
-        flashall_path = find_flashall_bat(last_extracted_folder)
+        flashall_path = find_flashall_bat(extract_path)
         if flashall_path:
             log_message(f"Running: {flashall_path}")
             run_command(["cmd.exe", "/c", "start", "flashall.bat"], log_file_path, cwd=os.path.dirname(flashall_path))
