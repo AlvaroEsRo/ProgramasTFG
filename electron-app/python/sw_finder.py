@@ -154,7 +154,7 @@ def run_installation(file_path, carrier):
                     last_extracted_folder = second_extract_folder
                 else:
                     log_message(f"Error: The file {extracted_file_path} is not ready to extract.")
-        # break  # <-- Elimina este break o ponlo solo si quieres salir tras el primer .tar/.zip
+  
 
         # Ahora, fuera del bucle, ejecuta los comandos fastboot y el batch
         log_message(f"Running: fastboot oem config carrier {carrier}")
@@ -167,10 +167,26 @@ def run_installation(file_path, carrier):
             log_message("No device connected. Aborting installation.")
             return
 
+        # Busca la ruta real del flashall.bat después de todas las extracciones
         flashall_path = find_flashall_bat(extract_path)
         if flashall_path:
+            flashall_dir = os.path.dirname(flashall_path)
+            log_message(f"Found flashall.bat at: {flashall_path}")
+
+            # Ejecuta los comandos fastboot en la carpeta correcta
+            log_message(f"Running: fastboot oem config carrier {carrier}")
+            if not run_fastboot_command(["fastboot", "oem", "config", "carrier", carrier], log_file_path, cwd=flashall_dir):
+                log_message("No device connected. Aborting installation.")
+                return
+
+            log_message("Running: fastboot -w")
+            if not run_fastboot_command(["fastboot", "-w"], log_file_path, cwd=flashall_dir):
+                log_message("No device connected. Aborting installation.")
+                return
+
+            # Ejecuta el batch en la carpeta correcta
             log_message(f"Running: {flashall_path}")
-            run_command(["cmd.exe", "/c", "start", "flashall.bat"], log_file_path, cwd=os.path.dirname(flashall_path))
+            run_command(["cmd.exe", "/c", "start", "flashall.bat"], log_file_path, cwd=flashall_dir)
             log_message("File 'flashall.bat' executed successfully.")
         else:
             log_message("The file 'flashall.bat' was not found in the extracted folder.")
