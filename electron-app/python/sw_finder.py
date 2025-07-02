@@ -42,10 +42,10 @@ def index():
         if response.status_code != 200:
             return "Could not access the provided URL.", 404
 
+        print(response.text)  # Añade esto justo antes del pattern.search
+
         # Search for the file name with the pattern in hrefs
-        pattern = re.compile(
-            rf'href="(fastboot_{project}_g_sys_{build_type}_{android_version}_{sw_version}.*(release-keys|intcfg-test-keys).*\.tar\.gz)"'
-        )
+        pattern = re.compile(r'href="(fastboot_.*?\.tar\.gz)"', re.IGNORECASE)
         match = pattern.search(response.text)
         if not match:
             return "No file matching the expected pattern was found.", 404
@@ -75,7 +75,7 @@ def descargar():
     url = f"{base_url}/{project}/{android_version}/{sw_version}/{project}_g_sys/{build_type}/release-keys_cid50/"
 
     # Make a request to get the folder index
-    response = requests.get(url, auth=('olallaov', 'Paris2025'))
+    response = requests.get(url, auth=('olallaov', 'Croacia2025'))
     if response.status_code != 200:
         return jsonify({"error": "Could not access the provided URL."}), 404
 
@@ -135,8 +135,19 @@ def run_installation(file_path, carrier):
         log_message(f"Extracting the file to: {extract_path}")
 
         seven_zip_path = r"C:\Program Files\7-Zip\7z.exe"
-        run_command([seven_zip_path, "x", file_path, f"-o{extract_path}", "-bso1", "-bsp1"], log_file_path)
+        run_command([seven_zip_path, "x", file_path, f'-o{extract_path}', "-bso1", "-bsp1"], log_file_path)
         log_message(f"First extraction completed in: {extract_path}")
+
+        # Espera a que el .tar aparezca tras la primera extracción
+        tar_found = False
+        for _ in range(60):  # Espera hasta 60 segundos
+            tar_files = [f for f in os.listdir(extract_path) if f.endswith('.tar')]
+            if tar_files:
+                tar_found = True
+                break
+            time.sleep(1)
+        if not tar_found:
+            log_message("Warning: .tar file not found after extraction, but continuing.")
 
         # Track the last extracted folder
         last_extracted_folder = extract_path
@@ -151,7 +162,19 @@ def run_installation(file_path, carrier):
                     os.makedirs(second_extract_folder, exist_ok=True)
                     run_command([seven_zip_path, "x", extracted_file_path, f"-o{second_extract_folder}", "-bso1", "-bsp1"], log_file_path)
                     log_message(f"Second extraction completed in: {second_extract_folder}")
-                    last_extracted_folder = second_extract_folder
+
+                    # Espera a que la subcarpeta y el flashall.bat existan
+                    bat_found = False
+                    for _ in range(120):  # Espera hasta 2 minutos
+                        for root, dirs, files in os.walk(second_extract_folder):
+                            if "flashall.bat" in files:
+                                bat_found = True
+                                break
+                        if bat_found:
+                            break
+                        time.sleep(1)
+                    if not bat_found:
+                        log_message("Warning: flashall.bat not found after extraction, but continuing.")
                 else:
                     log_message(f"Error: The file {extracted_file_path} is not ready to extract.")
   
@@ -168,25 +191,11 @@ def run_installation(file_path, carrier):
             return
 
         # Busca la ruta real del flashall.bat después de todas las extracciones
-        flashall_path = find_flashall_bat(extract_path)
+        flashall_path = find_flashall_bat(last_extracted_folder)
         if flashall_path:
-            flashall_dir = os.path.dirname(flashall_path)
-            log_message(f"Found flashall.bat at: {flashall_path}")
-
-            # Ejecuta los comandos fastboot en la carpeta correcta
-            log_message(f"Running: fastboot oem config carrier {carrier}")
-            if not run_fastboot_command(["fastboot", "oem", "config", "carrier", carrier], log_file_path, cwd=flashall_dir):
-                log_message("No device connected. Aborting installation.")
-                return
-
-            log_message("Running: fastboot -w")
-            if not run_fastboot_command(["fastboot", "-w"], log_file_path, cwd=flashall_dir):
-                log_message("No device connected. Aborting installation.")
-                return
-
-            # Ejecuta el batch en la carpeta correcta
             log_message(f"Running: {flashall_path}")
-            run_command(["cmd.exe", "/c", "start", "flashall.bat"], log_file_path, cwd=flashall_dir)
+            # Ejecuta en primer plano en la carpeta donde está el batch
+            run_command(["cmd.exe", "/c", "start", "flashall.bat"], log_file_path, cwd=os.path.dirname(flashall_path))
             log_message("File 'flashall.bat' executed successfully.")
         else:
             log_message("The file 'flashall.bat' was not found in the extracted folder.")

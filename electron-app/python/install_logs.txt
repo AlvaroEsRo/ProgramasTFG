@@ -1,455 +1,273 @@
-Extracting the file to: C:\ROM\Taipei
+Extracting the file to: C:\ROM\Orion - Leap
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-  0M Scan C:\ROM\Taipei\
-                        
-1 file, 5419491980 bytes (5169 MiB)
+  0M Scan C:\ROM\Orion - Leap\
+                              
+1 file, 14925773714 bytes (14 GiB)
 
-Extracting archive: C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US.tar.gz
+Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar.gz
 --
-Path = C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US.tar.gz
+Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar.gz
 Type = gzip
 Headers Size = 10
 
   0%
     
-  0% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  1% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  2% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  3% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  4% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  5% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  6% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  7% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  8% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-  9% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 10% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 11% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 12% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 13% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 14% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 15% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 16% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 17% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 18% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 19% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 20% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 21% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 22% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 24% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 25% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 26% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 27% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 28% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 29% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 30% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 31% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 32% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 33% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 34% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 35% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 36% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 37% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 38% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 39% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 40% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 41% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 42% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 43% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 44% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 45% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 46% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 47% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 48% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 49% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 50% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 51% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 52% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 53% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 54% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 55% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 56% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 57% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 58% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 59% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 60% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 61% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 62% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 63% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 64% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 65% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 66% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 67% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 68% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 69% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 70% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 71% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 72% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 73% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 74% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 75% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 76% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 77% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 78% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 79% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 80% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 81% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 82% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 83% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 84% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 85% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 86% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 87% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 88% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 89% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 90% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 91% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 92% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 94% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 95% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 97% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 98% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
- 99% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-100% - fastboot_taipei_g_sys_user_15_V . release-keys-cid50-global_US.tar
-                                                                         
-Everything is Ok
-
-Size:       6696755200
-Compressed: 5419491980
-First extraction completed in: C:\ROM\Taipei
-Found additional compressed file: C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US.tar
+  0% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  1% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  2% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  3% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  4% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  5% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  6% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  7% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  8% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+  9% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 10% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 11% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 12% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 13% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 14% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 15% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 16% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 17% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 18% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 19% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 20% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 21% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 22% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 23% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 24% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 25% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 26% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 27% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 28% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 29% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 30% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 31% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 32% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 33% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 34% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 35% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 36% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 37% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 38% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 39% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 40% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 41% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 42% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 43% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 44% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 45% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 46% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 47% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 48% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 49% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 50% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+ 51% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+                                                                        
+Error running command: [Errno 22] Invalid argument
+First extraction completed in: C:\ROM\Orion - Leap
+Found additional compressed file: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-  0M Scan C:\ROM\Taipei\
-                        
-1 file, 6696755200 bytes (6387 MiB)
+  0M Scan C:\ROM\Orion - Leap\
+                              
+1 file, 18172354560 bytes (17 GiB)
 
-Extracting archive: C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US.tar
- 86% 4 Open
-           
+Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar
+  3% 45 Open
+            
 --
-Path = C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US.tar
+Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar
 Type = tar
-Physical Size = 6696755200
-Headers Size = 95744
+Physical Size = 18172354560
+Headers Size = 206848
 Code Page = UTF-8
 Characteristics = GNU LongName ASCII
 
   0%
     
-  2% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
-  4% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
-  7% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
-  9% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 11% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 13% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 15% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 17% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 19% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 21% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 23% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 25% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 27% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 29% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 31% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 33% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 35% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 37% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 39% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 41% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 42% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 43% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 44% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 46% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 47% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 48% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 49% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 50% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 51% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 52% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 53% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 54% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 55% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 56% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 57% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 59% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 60% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 61% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 62% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 63% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 64% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 65% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 66% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 67% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 68% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 69% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 70% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 71% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 72% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 73% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 74% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 75% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 76% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 77% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 78% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 79% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 80% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 81% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 82% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 83% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 84% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 85% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 86% 3 - taipei_g_sys_user_15_V1UT35H.61 . -keys-cid50-global_US\super.img
-                                                                          
- 86% 6 - taipei_g_sys_user_15_V1UT35H.61 . global_US\vendor_boot-debug.img
-                                                                          
- 87% 11 - taipei_g_sys_user_15_V1UT35H.61- . ys-cid50-global_US\blankflash.zip
-                                                                              
- 87% 14 - taipei_g_sys_user_15_V1UT35H.61 . keys-cid50-global_US\md1img.img
+  0% 4 - leap_g_userdebug_15_V2VLS35.42- . est-keys_global_US\recovery.img
+                                                                          
+  0% 17
+       
+  1% 36
+       
+  1% 44 - leap_g_userdebug_15_V2VLS35.42-6 . -keys_global_US\ota\otatools.zip
+                                                                             
+  2% 44 - leap_g_userdebug_15_V2VLS35.42-6 . -keys_global_US\ota\otatools.zip
+                                                                             
+  3% 44 - leap_g_userdebug_15_V2VLS35.42-6 . -keys_global_US\ota\otatools.zip
+                                                                             
+  3% 45
+       
+  3% 61 - leap_g_userdebug_15_V2VLS35.42- . est-keys_global_US\userdata.img
                                                                            
- 88% 18
-       
- 88% 34
-       
- 89% 38 - taipei_g_sys_user_15_V1UT35H.61- . s-cid50-global_US\vendor_boot.img
-                                                                              
- 90% 39
-       
- 90% 40 - taipei_g_sys_user_15_V1UT35H.6 . e-keys-cid50-global_US\boot.img
-                                                                          
- 91% 45 - taipei_g_sys_user_15_V1UT35H.6 . e-keys-cid50-global_US\ota\META
-                                                                          
- 91% 61 - taipei_g_sys_user_15_V1UT35H.61 . lobal_US\ota\META\misc_info.txt
-                                                                           
- 91% 77 - taipei_g_sys_user_15_V1UT35H.61- . vendor_dlkm_filesystem_config.txt
-                                                                              
- 93% 80 - taipei_g_sys_user_15_V1UT35H.61-2 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 94% 80 - taipei_g_sys_user_15_V1UT35H.61-2 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 95% 80 - taipei_g_sys_user_15_V1UT35H.61-2 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 96% 80 - taipei_g_sys_user_15_V1UT35H.61-2 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 97% 80 - taipei_g_sys_user_15_V1UT35H.61-2 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 98% 80 - taipei_g_sys_user_15_V1UT35H.61-2 . -cid50-global_US\ota\otatools.zip
-                                                                               
- 98% 81
-       
- 98% 90 - taipei_g_sys_user_15_V1UT35H.61- . ys-cid50-global_US\Linux\fastboot
-                                                                              
- 99% 93 - taipei_g_sys_user_15_V1UT35H.61- . ys-cid50-global_US\boot-debug.img
-                                                                              
-Everything is Ok
+  4% 62 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\dspso.bin
+                                                                         
+  4% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+  5% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+  6% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+  7% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+  8% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+  9% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 10% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 11% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 12% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 13% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 14% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 15% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 16% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 17% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
+                                                                         
+ 17% 76 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\radio.img
+                                                                         
+ 18% 76 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\radio.img
+                                                                         
+ 18% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 19% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 20% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 21% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 22% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 23% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 24% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 25% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 26% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 27% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 28% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 29% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 30% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 31% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 32% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 33% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 34% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 35% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 36% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 37% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 38% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 39% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 40% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 41% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 42% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 43% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+                                                                         
+ 44% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+Error running command: [Errno 22] Invalid argument
+Second extraction completed in: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US
+Running: fastboot oem config carrier reteu
+(bootloader) <UTAG name="carrier" type="str" protected="FALSE">
+(bootloader)   <value>
+(bootloader)     reteu
+(bootloader)   </value>
+(bootloader)   <description>
+(bootloader)     Carrier IDs, see http://goo.gl/lojLh3
+(bootloader)   </description>
+(bootloader) </UTAG>
 
-Folders: 6
-Files: 88
-Size:       6696639333
-Compressed: 6696755200
-Second extraction completed in: C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US
-Running: fastboot oem config carrier reteu
-(bootloader) <UTAG name="carrier" type="str" protected="false">
-(bootloader)   <value>
-(bootloader)     reteu
-(bootloader)   </value>
-(bootloader)   <description>
-(bootloader)     Carrier IDs, see http://goo.gl/lojLh3
-(bootloader)   </description>
-(bootloader) </UTAG>
-OKAY [  0.003s]
-Finished. Total time: 0.003s
+OKAY [  0.005s]
+Finished. Total time: 0.005s
 Running: fastboot -w
-Erasing 'userdata'                                 OKAY [  0.327s]
+Erasing 'userdata'                                 OKAY [  0.001s]
 Erase successful, but not automatically formatting.
 File system type raw not supported.
-Erasing 'metadata'                                 OKAY [  0.334s]
+Erasing 'metadata'                                 OKAY [  0.001s]
 Erase successful, but not automatically formatting.
 File system type raw not supported.
-Finished. Total time: 0.670s
-Found flashall.bat at: C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US\taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US\flashall.bat
-Running: fastboot oem config carrier reteu
-(bootloader) <UTAG name="carrier" type="str" protected="false">
-(bootloader)   <value>
-(bootloader)     reteu
-(bootloader)   </value>
-(bootloader)   <description>
-(bootloader)     Carrier IDs, see http://goo.gl/lojLh3
-(bootloader)   </description>
-(bootloader) </UTAG>
-OKAY [  0.003s]
-Finished. Total time: 0.003s
-Running: fastboot -w
-Erasing 'userdata'                                 OKAY [  0.290s]
-Erase successful, but not automatically formatting.
-File system type raw not supported.
-Erasing 'metadata'                                 OKAY [  0.314s]
-Erase successful, but not automatically formatting.
-File system type raw not supported.
-Finished. Total time: 0.615s
-Running: C:\ROM\Taipei\fastboot_taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US\taipei_g_sys_user_15_V1UT35H.61-21-1-2_939e63-2f4d5_release-keys-cid50-global_US\flashall.bat
+Finished. Total time: 0.020s
+Running: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US\leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US\flashall.bat
 File 'flashall.bat' executed successfully.
 Installation completed successfully.
