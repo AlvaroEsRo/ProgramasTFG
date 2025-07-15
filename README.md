@@ -1,125 +1,165 @@
 # ProgramasTFG
 
-# Bug Tracker Excel - Herramienta de Análisis y Gestión
+## Overview
 
-## Descripción
+**ProgramasTFG** is a multi-tool project designed for Motorola software and bug management workflows. It includes:
 
-Bug Tracker Excel es una aplicación web desarrollada en Flask que permite analizar archivos Excel de seguimiento de bugs, identificar nuevos problemas, bugs cerrados, aún abiertos y generar reportes para plataformas como Jira. Especialmente diseñada para integrarse con los procesos de Motorola.
+- **Bug Tracker Excel**: A web application (Flask) for analyzing and reporting bugs from Excel files.
+- **Firmware Installer**: A desktop application (Electron + Flask backend) for downloading, extracting, and flashing Motorola firmware images, with device detection and log export features.
 
-## Características Principales
+---
 
-- **Análisis de Excel**: Procesa archivos Excel con información de bugs desde la fila 11.
-- **Detección inteligente de columnas**: Reconoce diferentes formatos de columnas en Excel.
-- **Clasificación automática de bugs**: Categoriza bugs como nuevos, cerrados, aún abiertos o repetidos.
-- **Base de datos persistente**: Almacena el historial de bugs para análisis comparativo.
-- **Vista detallada de bugs**: Visualización completa de cada bug con toda su información.
-- **Integración con Jira**: Generación de reportes formateados para Jira.
+## Features
 
-## Requisitos
+### Bug Tracker Excel
 
-- Python 3.6 o superior
-- Flask
-- pandas
-- SQLite3
+- Analyze Excel bug tracking files (starting from row 11).
+- Smart column detection for various Excel formats.
+- Automatic bug classification: new, closed, open, or duplicate.
+- Persistent database for historical bug analysis.
+- Detailed bug views.
+- Jira-formatted report generation.
 
-## Instalación
+### Firmware Installer
 
-1. Clona el repositorio:
+- Download Motorola firmware from Artifactory using project, Android version, and build type.
+- Extract `.tar.gz` and `.tar` firmware packages using 7-Zip.
+- Detect and flash devices via ADB and Fastboot.
+- Run `flashall.bat` automatically after extraction.
+- Export connected device info to Excel.
+- Integrated logs for all operations.
+
+---
+
+## Requirements
+
+- **Python 3.6+**
+- **Node.js 16+** (for Electron app)
+- **7-Zip** (installed at `C:\Program Files\7-Zip\7z.exe`)
+- **pip** (Python package manager)
+- **npm** (Node.js package manager)
+
+**Python dependencies:**  
+See `requirements.txt` (includes Flask, pandas, etc.)
+
+---
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/youruser/TFGProgramas.git
+cd TFGProgramas
+```
+
+### 2. Set Up Python Environment
+
+#### Windows
+
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+#### macOS/Linux
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### 3. Set Up Electron Environment
+
+```bash
+npm install
+```
+
+---
+
+## Usage
+
+### Bug Tracker Excel
+
+1. Activate the Python virtual environment:
    ```bash
-   git clone https://github.com/tuusuario/TFGProgramas.git
-   cd TFGProgramas
+   .\venv\Scripts\activate  # Windows
+   source venv/bin/activate  # macOS/Linux
    ```
 
-2. Crea un entorno virtual:
-   ```bash
-   python -m venv venv
-   ```
-
-3. Activa el entorno virtual:
-   - En Windows:
-     ```bash
-     .\venv\Scripts\activate
-     ```
-   - En macOS/Linux:
-     ```bash
-     source venv/bin/activate
-     ```
-
-4. Instala las dependencias necesarias:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## Uso
-
-1. Asegúrate de que el entorno virtual esté activado:
-   ```bash
-   .\venv\Scripts\activate  # En Windows
-   source venv/bin/activate  # En macOS/Linux
-   ```
-
-2. Ejecuta la aplicación:
+2. Run the application:
    ```bash
    python .\ScriptArtifacts\sw_finder.py
    ```
 
-3. Accede a la aplicación en tu navegador en [http://127.0.0.1:5000](http://127.0.0.1:5000).
+3. Open your browser and go to [http://127.0.0.1:5000](http://127.0.0.1:5000).
 
-## Estructura del Proyecto
+### Firmware Installer
 
-- `ScriptArtifacts/`: Contiene los scripts principales del proyecto.
-- `templates/`: Archivos HTML para la interfaz de usuario.
-- `static/`: Archivos estáticos como CSS, JavaScript e imágenes.
-- `README.md`: Documentación del proyecto.
+1. Build the Electron app:
+   ```bash
+   npm run build
+   ```
 
-## Notas
+2. Run the installer from the `dist` folder.
 
-- Asegúrate de que los archivos Excel que deseas analizar estén en el formato esperado (fila 11 como inicio de datos).
-- Si necesitas agregar más dependencias, actualiza el archivo `requirements.txt` con:
+---
+
+## Project Structure
+
+- `ScriptArtifacts/`: Contains main project scripts.
+- `templates/`: HTML files for the user interface.
+- `static/`: Static files like CSS, JavaScript, and images.
+- `README.md`: Project documentation.
+
+---
+
+## Notes
+
+- Ensure Excel files are in the expected format (data starting from row 11).
+- For additional dependencies, update `requirements.txt` with:
   ```bash
   pip freeze > requirements.txt
   ```
 
-## Contribuciones
+---
 
-Si deseas contribuir al proyecto, por favor abre un issue o envía un pull request en el repositorio.
+**Developed with ❤️ by Alvaro Estevez Rodriguez as part of my Final Degree Project (TFG).**
 
-## Licencia
+## Distribution as a Single Executable (Windows)
 
-Este proyecto está bajo la licencia [MIT](https://opensource.org/licenses/MIT).
+To distribute the application as a single executable file for Windows (without requiring Python installation), follow these steps:
 
-## Distribución como ejecutable único (Windows)
-
-Si deseas distribuir la aplicación como un único archivo ejecutable para Windows (sin requerir Python instalado), sigue este procedimiento:
-
-1. **Empaqueta el backend Python:**
-   - Instala PyInstaller:
+1. **Package the Python backend:**
+   - Install PyInstaller:
      ```bash
      pip install pyinstaller
      ```
-   - Desde la carpeta `python`, ejecuta:
+   - From the `python` folder, run:
      ```bash
      pyinstaller --onefile --add-data "templates;templates" --add-data "static;static" sw_finder.py
      ```
-   - El ejecutable se generará en `python/dist/sw_finder.exe`.
+   - The executable will be generated in `python/dist/sw_finder.exe`.
 
-2. **Configura Electron para lanzar el ejecutable:**
-   - En el archivo `main.js` de Electron, cambia la línea que lanza Flask:
+2. **Configure Electron to launch the executable:**
+   - In the Electron `main.js` file, change the line that launches Flask to:
      ```js
      flaskProcess = spawn(path.join(__dirname, 'python', 'dist', 'sw_finder.exe'));
      ```
 
-3. **Empaqueta la aplicación Electron:**
-   - Instala electron-builder:
+3. **Package the Electron application:**
+   - Install electron-builder:
      ```bash
      npm install --save-dev electron-builder
      ```
-   - Añade la configuración adecuada en `package.json` para incluir el ejecutable.
-   - Ejecuta el build:
+   - Add the appropriate configuration in `package.json` to include the executable.
+   - Run the build:
      ```bash
      npm run build
      ```
-   - El instalador generado en la carpeta `dist/` funcionará en cualquier Windows sin requerir Python.
+   - The installer generated in the `dist/` folder will work on any Windows machine without requiring Python.
 
-**Nota:**  
-Asegúrate de que cualquier dependencia externa (como 7-Zip) esté disponible en el equipo destino o incluida en el paquete.
+**Note:**  
+Ensure that any external dependencies (like 7-Zip) are available on the target machine or included in the package.

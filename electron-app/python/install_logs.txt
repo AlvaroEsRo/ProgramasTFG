@@ -1,253 +1,247 @@
-Extracting the file to: C:\ROM\Orion - Leap
+Extracting the file to: C:\ROM\Penang5G
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-  0M Scan C:\ROM\Orion - Leap\
-                              
-1 file, 14925773714 bytes (14 GiB)
+  0M Scan C:\ROM\Penang5G\
+                          
+1 file, 4601959984 bytes (4389 MiB)
 
-Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar.gz
+Extracting archive: C:\ROM\Penang5G\fastboot_penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US.tar.gz
 --
-Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar.gz
+Path = C:\ROM\Penang5G\fastboot_penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US.tar.gz
 Type = gzip
 Headers Size = 10
 
   0%
     
-  0% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  0% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  1% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  1% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  2% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  2% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  3% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  3% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  4% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  4% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  5% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  5% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  6% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  6% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  7% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  7% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  8% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  8% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
-  9% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+  9% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 10% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 10% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 11% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 11% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 12% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 12% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 13% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 13% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 14% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 14% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 15% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 15% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 16% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 16% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 17% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 17% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 18% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 18% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 19% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 19% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 20% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 20% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 21% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 21% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 22% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 22% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 23% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 23% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 24% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 24% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 25% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 25% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 26% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 26% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 27% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 27% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 28% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 28% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 29% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 29% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 30% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 30% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 31% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 31% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 32% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 32% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 33% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 33% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 34% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 34% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 35% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 35% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 36% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 36% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 37% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 37% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 38% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 38% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 39% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 39% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 40% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 40% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 41% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 41% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 42% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
+ 42% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
                                                                         
- 43% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 44% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 45% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 46% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 47% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 48% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 49% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 50% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
- 51% - fastboot_leap_g_userdebug_15_V2 . _intcfg-test-keys_global_US.tar
-                                                                        
+ 43% - fastboot_penang_g_userdebug_14_ . 69a_intcfg-test-keys_ret_US.tar
 Error running command: [Errno 22] Invalid argument
-First extraction completed in: C:\ROM\Orion - Leap
-Found additional compressed file: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar
+First extraction completed in: C:\ROM\Penang5G
+Found additional compressed file: C:\ROM\Penang5G\fastboot_penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US.tar
 
 7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
 
 Scanning the drive for archives:
-  0M Scan C:\ROM\Orion - Leap\
-                              
-1 file, 18172354560 bytes (17 GiB)
+  0M Scan C:\ROM\Penang5G\
+                          
+1 file, 6207139840 bytes (5920 MiB)
 
-Extracting archive: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar
-  3% 45 Open
+Extracting archive: C:\ROM\Penang5G\fastboot_penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US.tar
+  5% 21 Open
             
 --
-Path = C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US.tar
+Path = C:\ROM\Penang5G\fastboot_penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US.tar
 Type = tar
-Physical Size = 18172354560
-Headers Size = 206848
+Physical Size = 6207139840
+Headers Size = 184320
 Code Page = UTF-8
 Characteristics = GNU LongName ASCII
 
   0%
     
-  0% 4 - leap_g_userdebug_15_V2VLS35.42- . est-keys_global_US\recovery.img
+  2% 6 - penang_g_userdebug_14_U1TPS34.2 . g-test-keys_ret_US\NON-HLOS.bin
                                                                           
-  0% 17
+  3% 7
+      
+  4% 16
        
-  1% 36
+  5% 20 - penang_g_userdebug_14_U1TPS34.29 . test-keys_ret_US\vendor_boot.img
+                                                                             
+  5% 21 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\radio.img
+                                                                         
+  7% 21 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\radio.img
+                                                                         
+  8% 22
        
-  1% 44 - leap_g_userdebug_15_V2VLS35.42-6 . -keys_global_US\ota\otatools.zip
-                                                                             
-  2% 44 - leap_g_userdebug_15_V2VLS35.42-6 . -keys_global_US\ota\otatools.zip
-                                                                             
-  3% 44 - leap_g_userdebug_15_V2VLS35.42-6 . -keys_global_US\ota\otatools.zip
-                                                                             
-  3% 45
+  9% 23
        
-  3% 61 - leap_g_userdebug_15_V2VLS35.42- . est-keys_global_US\userdata.img
+  9% 46
+       
+  9% 68
+       
+ 10% 90 - penang_g_userdebug_14_U1TPS34.2 . EBUG\ROOT_mannar.adsp.prodQ.elf
                                                                            
-  4% 62 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\dspso.bin
+ 11% 96
+       
+ 12% 101 - penang_g_userdebug_14_U1TPS34.2 . et_US\mbm-ci\DEBUG\XBLLoader.dll
+                                                                             
+ 13% 106 - penang_g_userdebug_14_U1TPS34 . O_mannar.adsp.prod2Q_reloc.elf
                                                                          
-  4% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
-  5% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
-  6% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
-  7% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
-  8% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
-  9% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 10% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 11% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 12% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 13% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 14% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 15% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 16% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 17% 69 - leap_g_userdebug_15_V2VLS35.42 . test-keys_global_US\vendor.img
-                                                                         
- 17% 76 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\radio.img
-                                                                         
- 18% 76 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\radio.img
-                                                                         
- 18% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 19% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 20% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 21% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 22% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 23% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 24% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 25% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 26% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 27% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 28% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 29% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 30% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 31% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 32% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 33% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 34% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 35% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 36% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 37% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 38% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 39% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 40% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 41% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 42% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 43% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
-                                                                         
- 44% 77 - leap_g_userdebug_15_V2VLS35.42 . -test-keys_global_US\super.img
+ 14% 110 - penang_g_userdebug_14_U1TPS34. . s_ret_US\mbm-ci\singleimage.bin
+                                                                           
+ 15% 126 - penang_g_userdebug_14_U1TPS34.2 . -test-keys_ret_US\boot-debug.img
+                                                                             
+ 16% 134
+        
+ 16% 157
+        
+ 17% 167 - penang_g_userdebug_14_U1TPS34.29 . test-keys_ret_US\ota\otatools.zip
+                                                                               
+ 18% 167 - penang_g_userdebug_14_U1TPS34.29 . test-keys_ret_US\ota\otatools.zip
+                                                                               
+ 19% 167 - penang_g_userdebug_14_U1TPS34.29 . test-keys_ret_US\ota\otatools.zip
+                                                                               
+ 20% 167 - penang_g_userdebug_14_U1TPS34.29 . test-keys_ret_US\ota\otatools.zip
+                                                                               
+ 21% 167 - penang_g_userdebug_14_U1TPS34.29 . test-keys_ret_US\ota\otatools.zip
+                                                                               
+ 22% 168
+        
+ 23% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 24% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 26% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 27% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 28% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 29% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 30% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 33% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 35% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 36% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 37% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 39% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 40% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 41% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 42% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 44% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 45% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 46% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 47% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 48% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 49% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 51% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 52% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 53% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 54% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 55% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 56% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 57% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 59% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 60% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 61% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 62% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
+ 63% 171 - penang_g_userdebug_14_U1TPS34. . cfg-test-keys_ret_US\super.img
+                                                                          
 Error running command: [Errno 22] Invalid argument
-Second extraction completed in: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US
+Second extraction completed in: C:\ROM\Penang5G\fastboot_penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US
 Running: fastboot oem config carrier reteu
 (bootloader) <UTAG name="carrier" type="str" protected="FALSE">
 (bootloader)   <value>
@@ -258,16 +252,16 @@ Running: fastboot oem config carrier reteu
 (bootloader)   </description>
 (bootloader) </UTAG>
 
-OKAY [  0.005s]
-Finished. Total time: 0.005s
+OKAY [  0.003s]
+Finished. Total time: 0.004s
 Running: fastboot -w
-Erasing 'userdata'                                 OKAY [  0.001s]
+Erasing 'userdata'                                 OKAY [  0.272s]
 Erase successful, but not automatically formatting.
 File system type raw not supported.
-Erasing 'metadata'                                 OKAY [  0.001s]
+Erasing 'metadata'                                 OKAY [  0.003s]
 Erase successful, but not automatically formatting.
 File system type raw not supported.
-Finished. Total time: 0.020s
-Running: C:\ROM\Orion - Leap\fastboot_leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US\leap_g_userdebug_15_V2VLS35.42-60-14-1_baaf2-b4e41_intcfg-test-keys_global_US\flashall.bat
+Finished. Total time: 0.287s
+Running: C:\ROM\Penang5G\fastboot_penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US\penang_g_userdebug_14_U1TPS34.29-83-7-3-6_b60833-2769a_intcfg-test-keys_ret_US\flashall.bat
 File 'flashall.bat' executed successfully.
 Installation completed successfully.

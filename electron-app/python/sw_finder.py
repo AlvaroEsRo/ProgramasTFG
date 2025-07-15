@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 log_file_path = os.path.join(os.path.dirname(__file__), "install_logs.txt")
 
-# Asegúrate de que la carpeta existe
+# Asegúrate de que la carpeta existe 
 os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
 
 @app.route('/', methods=['GET', 'POST'])
